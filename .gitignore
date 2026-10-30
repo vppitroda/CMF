@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+out/probe/
+
+# .NET
+api/**/bin/
+api/**/obj/
+
+# Angular
+web/node_modules/
+web/dist/
+web/.angular/

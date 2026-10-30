@@ -1,0 +1,7612 @@
+[
+ {
+  "page": 1,
+  "page_size": [
+   3370,
+   2384
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     108.9,
+     2114.1,
+     360.5,
+     2128.3
+    ]
+   },
+   "design_pressure": {
+    "value": "250/300 Bar",
+    "bbox": [
+     108.9,
+     2134.5,
+     407.2,
+     2148.5
+    ],
+    "numbers": [
+     250.0,
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "working_pressure": {
+    "value": "140/200/270 Bar",
+    "bbox": [
+     108.9,
+     2154.9,
+     429.5,
+     2169.1
+    ],
+    "numbers": [
+     140.0,
+     200.0,
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     485.8,
+     2154.9,
+     725.4,
+     2168.9
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     108.9,
+     2175.4,
+     439.6,
+     2189.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "580/126/650 lpm",
+    "bbox": [
+     108.9,
+     2195.8,
+     429.2,
+     2209.9
+    ],
+    "numbers": [
+     580.0,
+     126.0,
+     650.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "NA",
+    "bbox": [
+     476.3,
+     2195.8,
+     581.5,
+     2209.9
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "24V DC",
+    "bbox": [
+     108.9,
+     2216.2,
+     384.3,
+     2230.5
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "110V AC",
+    "bbox": [
+     476.4,
+     2216.2,
+     657.0,
+     2230.3
+    ],
+    "numbers": [
+     110.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     108.9,
+     2236.6,
+     499.3,
+     2250.9
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     345.4,
+     2258.1,
+     564.2,
+     2271.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     345.4,
+     2278.5,
+     564.0,
+     2291.7
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     345.3,
+     2299.0,
+     564.0,
+     2312.2
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     108.9,
+     2319.4,
+     592.1,
+     2353.0
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     827.3,
+     2094.6,
+     1173.1,
+     2128.3
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     827.3,
+     2135.7,
+     1373.5,
+     2169.2
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P",
+    "size": "73 X 7.01",
+    "connection": "SAE 2 1/2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     819.4,
+     2236.6,
+     1192.6,
+     2249.7
+    ]
+   },
+   {
+    "name": "A3,B3,",
+    "size": "88.9 X 11.10",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE",
+    "table": "B",
+    "bbox": [
+     1220.7,
+     2236.6,
+     1545.6,
+     2249.7
+    ]
+   },
+   {
+    "name": "T",
+    "size": "88.9 X 5.49",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     818.8,
+     2257.1,
+     1192.6,
+     2270.2
+    ]
+   },
+   {
+    "name": "Y,C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2277.5,
+     1197.1,
+     2290.6
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     818.6,
+     2297.9,
+     1192.6,
+     2311.0
+    ]
+   },
+   {
+    "name": "A1,B1",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2318.3,
+     1200.2,
+     2331.4
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "10X1.5",
+    "connection": "G 3/8\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2338.8,
+     1200.2,
+     2351.9
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "SMPS is used to convert 110V AC to 24VDC."
+   },
+   {
+    "no": "2",
+    "text": "Electric motor is suitable to overloaded by 60% for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+   }
+  ],
+  "warnings": [],
+  "text_height": 13.1,
+  "file": "ELECON/01-PP60056-0-Hyd.Ckt (WT+WC+WG).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     115.7,
+     1470.9,
+     287.4,
+     1480.6
+    ]
+   },
+   "design_pressure": {
+    "value": "250/300 Bar",
+    "bbox": [
+     115.7,
+     1484.8,
+     319.2,
+     1494.4
+    ],
+    "numbers": [
+     250.0,
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "working_pressure": {
+    "value": "140/200/270 Bar",
+    "bbox": [
+     115.7,
+     1498.8,
+     334.5,
+     1508.4
+    ],
+    "numbers": [
+     140.0,
+     200.0,
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     373.0,
+     1498.8,
+     536.5,
+     1508.4
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     115.7,
+     1512.7,
+     341.4,
+     1522.3
+    ]
+   },
+   "main_pump_flow": {
+    "value": "580/126/650 lpm",
+    "bbox": [
+     115.7,
+     1526.7,
+     334.3,
+     1536.3
+    ],
+    "numbers": [
+     580.0,
+     126.0,
+     650.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "NA",
+    "bbox": [
+     366.4,
+     1526.7,
+     438.2,
+     1536.2
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     115.7,
+     1540.6,
+     307.5,
+     1550.4
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     366.5,
+     1540.6,
+     489.8,
+     1550.2
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     115.7,
+     1554.5,
+     382.1,
+     1564.3
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     277.1,
+     1569.1,
+     426.5,
+     1578.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.0,
+     1583.1,
+     426.4,
+     1592.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.1,
+     1597.1,
+     426.4,
+     1606.0
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     115.7,
+     1611.0,
+     445.4,
+     1633.9
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     605.9,
+     1457.7,
+     842.0,
+     1480.5
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     605.9,
+     1485.6,
+     978.8,
+     1508.5
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P",
+    "size": "73 X 7.01",
+    "connection": "SAE 2 1/2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1554.5,
+     855.4,
+     1563.4
+    ]
+   },
+   {
+    "name": "A3,B3,",
+    "size": "88.9 X 11.10",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE",
+    "table": "B",
+    "bbox": [
+     874.5,
+     1554.5,
+     1096.2,
+     1563.4
+    ]
+   },
+   {
+    "name": "T",
+    "size": "88.9 X 5.49",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     600.1,
+     1568.5,
+     855.4,
+     1577.5
+    ]
+   },
+   {
+    "name": "Y,C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1582.5,
+     858.4,
+     1591.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     600.0,
+     1596.4,
+     855.4,
+     1605.3
+    ]
+   },
+   {
+    "name": "A1,B1",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1610.3,
+     860.6,
+     1619.2
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "10X1.5",
+    "connection": "G 3/8\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1624.2,
+     860.6,
+     1633.2
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 60% for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 8.9,
+  "file": "ELECON/01-PP60056-a-Hyd.Ckt (WT+WC+WG).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     75.3,
+     1495.3,
+     253.5,
+     1505.4
+    ]
+   },
+   "design_pressure": {
+    "value": "250/300 Bar",
+    "bbox": [
+     75.3,
+     1509.7,
+     286.6,
+     1519.7
+    ],
+    "numbers": [
+     250.0,
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "working_pressure": {
+    "value": "140/200/270 Bar",
+    "bbox": [
+     75.3,
+     1524.2,
+     302.4,
+     1534.2
+    ],
+    "numbers": [
+     140.0,
+     200.0,
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     342.2,
+     1524.2,
+     511.9,
+     1534.2
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     75.3,
+     1538.7,
+     309.5,
+     1548.7
+    ]
+   },
+   "main_pump_flow": {
+    "value": "580/126/650 lpm",
+    "bbox": [
+     75.3,
+     1553.1,
+     302.2,
+     1563.1
+    ],
+    "numbers": [
+     580.0,
+     126.0,
+     650.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "NA",
+    "bbox": [
+     335.5,
+     1553.1,
+     410.0,
+     1563.1
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     75.3,
+     1567.6,
+     274.4,
+     1577.8
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     335.5,
+     1567.6,
+     463.5,
+     1577.5
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     75.3,
+     1582.0,
+     351.8,
+     1592.2
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     242.7,
+     1597.3,
+     397.8,
+     1606.6
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     242.7,
+     1611.7,
+     397.6,
+     1621.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     242.7,
+     1626.2,
+     397.6,
+     1635.6
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     75.4,
+     1640.7,
+     417.5,
+     1664.5
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     584.0,
+     1481.6,
+     829.0,
+     1505.3
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     584.0,
+     1510.5,
+     970.9,
+     1534.3
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P",
+    "size": "73 X 7.01",
+    "connection": "SAE 2 1/2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     578.5,
+     1582.0,
+     842.9,
+     1591.3
+    ]
+   },
+   {
+    "name": "A3,B3,",
+    "size": "88.9 X 11.10",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE",
+    "table": "B",
+    "bbox": [
+     862.6,
+     1582.0,
+     1092.9,
+     1591.3
+    ]
+   },
+   {
+    "name": "T",
+    "size": "88.9 X 5.49",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     578.1,
+     1596.6,
+     842.9,
+     1605.8
+    ]
+   },
+   {
+    "name": "Y,C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1611.1,
+     846.0,
+     1620.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     578.0,
+     1625.5,
+     842.9,
+     1634.8
+    ]
+   },
+   {
+    "name": "A1,B1",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1640.0,
+     848.3,
+     1649.3
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "10X1.5",
+    "connection": "G 3/8\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1654.4,
+     848.3,
+     1663.7
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 9.3,
+  "file": "ELECON/01-PP60056-b-Hyd.Ckt (WT+WC+WG).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "250/300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     205.0,
+     1073.1
+    ],
+    "numbers": [
+     250.0,
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "working_pressure": {
+    "value": "140/200/270 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     216.1,
+     1083.3
+    ],
+    "numbers": [
+     140.0,
+     200.0,
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "580/126/650 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     215.9,
+     1103.7
+    ],
+    "numbers": [
+     580.0,
+     126.0,
+     650.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "NA",
+    "bbox": [
+     239.4,
+     1096.7,
+     291.9,
+     1103.7
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     196.4,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     329.6,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P",
+    "size": "73 X 7.01",
+    "connection": "SAE 2 1/2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.6,
+     1117.1,
+     596.9,
+     1123.6
+    ]
+   },
+   {
+    "name": "A3,B3,",
+    "size": "88.9 X 11.10",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1117.1,
+     772.9,
+     1123.6
+    ]
+   },
+   {
+    "name": "T",
+    "size": "88.9 X 5.49",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.3,
+     1127.3,
+     596.9,
+     1133.8
+    ]
+   },
+   {
+    "name": "L",
+    "size": "25 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "B",
+    "bbox": [
+     611.2,
+     1127.3,
+     804.3,
+     1133.8
+    ]
+   },
+   {
+    "name": "Y,C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1137.5,
+     599.1,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     596.9,
+     1154.2
+    ]
+   },
+   {
+    "name": "A1,B1",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1157.8,
+     600.7,
+     1164.3
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "16 X 2",
+    "connection": "G 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1168.0,
+     600.7,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 06.02.2022 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60056-c-Hyd.Ckt (WT+WC+WG).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     115.7,
+     1470.9,
+     287.4,
+     1480.6
+    ]
+   },
+   "design_pressure": {
+    "value": "250/300 Bar",
+    "bbox": [
+     115.7,
+     1484.8,
+     319.2,
+     1494.4
+    ],
+    "numbers": [
+     250.0,
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "working_pressure": {
+    "value": "140/200/270 Bar",
+    "bbox": [
+     115.7,
+     1498.8,
+     334.5,
+     1508.4
+    ],
+    "numbers": [
+     140.0,
+     200.0,
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     373.0,
+     1498.8,
+     536.5,
+     1508.4
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     115.7,
+     1512.7,
+     341.4,
+     1522.3
+    ]
+   },
+   "main_pump_flow": {
+    "value": "580/126/650 lpm",
+    "bbox": [
+     115.7,
+     1526.7,
+     334.3,
+     1536.3
+    ],
+    "numbers": [
+     580.0,
+     126.0,
+     650.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "NA",
+    "bbox": [
+     366.4,
+     1526.7,
+     438.2,
+     1536.2
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     115.7,
+     1540.6,
+     307.5,
+     1550.4
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     366.5,
+     1540.6,
+     489.8,
+     1550.2
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     115.7,
+     1554.5,
+     382.1,
+     1564.3
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     277.1,
+     1569.1,
+     426.5,
+     1578.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.0,
+     1583.1,
+     426.4,
+     1592.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.1,
+     1597.1,
+     426.4,
+     1606.0
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     115.7,
+     1611.0,
+     445.4,
+     1633.9
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     605.9,
+     1457.7,
+     842.0,
+     1480.5
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     605.9,
+     1485.6,
+     978.8,
+     1508.5
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P",
+    "size": "73 X 7.01",
+    "connection": "SAE 2 1/2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1554.5,
+     855.4,
+     1563.4
+    ]
+   },
+   {
+    "name": "A3,B3,",
+    "size": "88.9 X 11.10",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE",
+    "table": "B",
+    "bbox": [
+     874.5,
+     1554.5,
+     1096.2,
+     1563.4
+    ]
+   },
+   {
+    "name": "T",
+    "size": "88.9 X 5.49",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     600.1,
+     1568.5,
+     855.4,
+     1577.5
+    ]
+   },
+   {
+    "name": "L",
+    "size": "25 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "B",
+    "bbox": [
+     875.0,
+     1568.5,
+     1139.2,
+     1577.5
+    ]
+   },
+   {
+    "name": "Y,C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1582.5,
+     858.4,
+     1591.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     600.0,
+     1596.4,
+     855.4,
+     1605.3
+    ]
+   },
+   {
+    "name": "A1,B1",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1610.3,
+     860.6,
+     1619.2
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "16 X 2",
+    "connection": "G 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1624.2,
+     860.6,
+     1633.2
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 24.02.2023 06.02.2022 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 8.9,
+  "file": "ELECON/01-PP60056-d-Hyd.Ckt (WT+WC+WG).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "250/300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     205.0,
+     1073.1
+    ],
+    "numbers": [
+     250.0,
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "working_pressure": {
+    "value": "140/200/270 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     216.1,
+     1083.3
+    ],
+    "numbers": [
+     140.0,
+     200.0,
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "580/126/650 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     215.9,
+     1103.7
+    ],
+    "numbers": [
+     580.0,
+     126.0,
+     650.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "NA",
+    "bbox": [
+     239.4,
+     1096.7,
+     291.9,
+     1103.7
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     196.4,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     329.6,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P",
+    "size": "73 X 7.01",
+    "connection": "SAE 2 1/2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.6,
+     1117.1,
+     596.9,
+     1123.6
+    ]
+   },
+   {
+    "name": "A3,B3,",
+    "size": "88.9 X 11.10",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1117.1,
+     772.9,
+     1123.6
+    ]
+   },
+   {
+    "name": "T",
+    "size": "88.9 X 5.49",
+    "connection": "SAE 3\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.3,
+     1127.3,
+     596.9,
+     1133.8
+    ]
+   },
+   {
+    "name": "L",
+    "size": "25 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "B",
+    "bbox": [
+     611.2,
+     1127.3,
+     804.3,
+     1133.8
+    ]
+   },
+   {
+    "name": "Y,C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1137.5,
+     599.1,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE(Weldable)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     596.9,
+     1154.2
+    ]
+   },
+   {
+    "name": "A1,B1",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1157.8,
+     600.7,
+     1164.3
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "16 X 2",
+    "connection": "G 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1168.0,
+     600.7,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle. 22.08.2023"
+   },
+   {
+    "no": "2",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 24.02.2023 06.02.2022 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60056-e-Hyd.Ckt (WT+WC+WG).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   3370,
+   2384
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     108.9,
+     2114.1,
+     360.5,
+     2128.3
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     108.9,
+     2134.5,
+     384.9,
+     2148.5
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "270 Bar",
+    "bbox": [
+     108.9,
+     2154.9,
+     384.9,
+     2169.1
+    ],
+    "numbers": [
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     485.8,
+     2154.9,
+     725.4,
+     2168.9
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     108.9,
+     2175.4,
+     439.6,
+     2189.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "215+215 lpm",
+    "bbox": [
+     108.9,
+     2195.8,
+     410.4,
+     2209.9
+    ],
+    "numbers": [
+     215.0,
+     215.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "rec_pump_flow": {
+    "value": "NA",
+    "bbox": [
+     476.3,
+     2195.8,
+     581.5,
+     2209.9
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "24 V DC",
+    "bbox": [
+     108.9,
+     2216.2,
+     387.4,
+     2230.5
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "24 V DC",
+    "bbox": [
+     476.4,
+     2216.2,
+     654.4,
+     2230.3
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     108.9,
+     2236.6,
+     499.3,
+     2250.9
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     345.4,
+     2258.1,
+     564.2,
+     2271.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     345.4,
+     2278.5,
+     564.0,
+     2291.7
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     345.3,
+     2299.0,
+     564.0,
+     2312.2
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     108.9,
+     2319.4,
+     592.1,
+     2353.0
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     827.3,
+     2094.6,
+     1173.1,
+     2128.3
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     827.3,
+     2135.7,
+     1373.5,
+     2169.2
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A6 to A9",
+    "size": "38 X 5",
+    "connection": "G1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2236.6,
+     1200.2,
+     2249.7
+    ]
+   },
+   {
+    "name": "A5,B5",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "B",
+    "bbox": [
+     1220.7,
+     2236.6,
+     1605.4,
+     2249.7
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "10 X 1.5",
+    "connection": "G 1/4\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2257.1,
+     1200.2,
+     2270.2
+    ]
+   },
+   {
+    "name": "P1,L",
+    "size": "28 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     819.4,
+     2277.5,
+     1200.2,
+     2290.6
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "A",
+    "bbox": [
+     818.6,
+     2297.9,
+     1195.8,
+     2311.0
+    ]
+   },
+   {
+    "name": "C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     819.0,
+     2318.3,
+     1200.2,
+     2331.4
+    ]
+   },
+   {
+    "name": "B6 to B9",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     819.3,
+     2338.8,
+     1200.2,
+     2351.9
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 125% for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection."
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+   }
+  ],
+  "warnings": [],
+  "text_height": 13.1,
+  "file": "ELECON/01-PP60057-0-Hyd.Ckt (SAC).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     115.7,
+     1470.9,
+     287.4,
+     1480.6
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     115.7,
+     1484.8,
+     304.0,
+     1494.4
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "270 Bar",
+    "bbox": [
+     115.7,
+     1498.8,
+     304.0,
+     1508.4
+    ],
+    "numbers": [
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     373.0,
+     1498.8,
+     536.5,
+     1508.4
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     115.7,
+     1512.7,
+     341.4,
+     1522.3
+    ]
+   },
+   "main_pump_flow": {
+    "value": "215+215 lpm",
+    "bbox": [
+     115.7,
+     1526.7,
+     321.5,
+     1536.3
+    ],
+    "numbers": [
+     215.0,
+     215.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "open_loop_flow": {
+    "value": "105+105 lpm",
+    "bbox": [
+     366.4,
+     1526.7,
+     472.3,
+     1536.3
+    ],
+    "numbers": [
+     105.0,
+     105.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     115.7,
+     1540.6,
+     309.7,
+     1550.4
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     366.5,
+     1540.6,
+     492.0,
+     1550.2
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     115.7,
+     1554.5,
+     382.1,
+     1564.3
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     277.1,
+     1569.1,
+     426.5,
+     1578.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.0,
+     1583.1,
+     426.4,
+     1592.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.1,
+     1597.1,
+     426.4,
+     1606.0
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     115.7,
+     1611.0,
+     445.4,
+     1633.9
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     605.9,
+     1457.7,
+     842.0,
+     1480.5
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     605.9,
+     1485.6,
+     978.8,
+     1508.5
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A6 to A9",
+    "size": "38 X 5",
+    "connection": "G1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1554.5,
+     860.6,
+     1563.4
+    ]
+   },
+   {
+    "name": "A5,B5",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "B",
+    "bbox": [
+     874.5,
+     1554.5,
+     1137.1,
+     1563.4
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "10 X 1.5",
+    "connection": "G 1/4\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1568.5,
+     860.6,
+     1577.5
+    ]
+   },
+   {
+    "name": "P1,L",
+    "size": "28 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1582.5,
+     860.6,
+     1591.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "A",
+    "bbox": [
+     600.0,
+     1596.4,
+     857.6,
+     1605.3
+    ]
+   },
+   {
+    "name": "C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     600.3,
+     1610.3,
+     860.6,
+     1619.2
+    ]
+   },
+   {
+    "name": "B6 to B9",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1624.2,
+     860.6,
+     1633.2
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 125% for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection."
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022 D"
+   }
+  ],
+  "warnings": [],
+  "text_height": 8.9,
+  "file": "ELECON/01-PP60057-a-Hyd.Ckt (SAC).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     75.3,
+     1495.3,
+     253.5,
+     1505.4
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     75.3,
+     1509.7,
+     270.8,
+     1519.7
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "270 Bar",
+    "bbox": [
+     75.3,
+     1524.2,
+     270.8,
+     1534.2
+    ],
+    "numbers": [
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     342.2,
+     1524.2,
+     511.9,
+     1534.2
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     75.3,
+     1538.7,
+     309.5,
+     1548.7
+    ]
+   },
+   "main_pump_flow": {
+    "value": "215+215 lpm",
+    "bbox": [
+     75.3,
+     1553.1,
+     288.9,
+     1563.1
+    ],
+    "numbers": [
+     215.0,
+     215.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "open_loop_flow": {
+    "value": "105+105 lpm",
+    "bbox": [
+     335.4,
+     1553.1,
+     445.4,
+     1563.2
+    ],
+    "numbers": [
+     105.0,
+     105.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     75.3,
+     1567.6,
+     276.6,
+     1577.8
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     335.5,
+     1567.6,
+     465.8,
+     1577.5
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     75.3,
+     1582.0,
+     351.8,
+     1592.2
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     242.7,
+     1597.3,
+     397.8,
+     1606.6
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     242.7,
+     1611.7,
+     397.6,
+     1621.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     242.7,
+     1626.2,
+     397.6,
+     1635.6
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     75.4,
+     1640.7,
+     417.5,
+     1664.5
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     584.0,
+     1481.6,
+     829.0,
+     1505.3
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     584.0,
+     1510.5,
+     970.9,
+     1534.3
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A6 to A9",
+    "size": "38 X 5",
+    "connection": "G1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1582.0,
+     848.3,
+     1591.3
+    ]
+   },
+   {
+    "name": "A5,B5",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "B",
+    "bbox": [
+     862.6,
+     1582.0,
+     1135.2,
+     1591.3
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "10 X 1.5",
+    "connection": "G 1/4\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1596.6,
+     848.3,
+     1605.8
+    ]
+   },
+   {
+    "name": "P1,L",
+    "size": "28 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     578.5,
+     1611.1,
+     848.3,
+     1620.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "A",
+    "bbox": [
+     578.0,
+     1625.5,
+     845.1,
+     1634.8
+    ]
+   },
+   {
+    "name": "C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     578.3,
+     1640.0,
+     848.3,
+     1649.3
+    ]
+   },
+   {
+    "name": "B6 to B9",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     578.5,
+     1654.4,
+     848.3,
+     1663.7
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection."
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 9.3,
+  "file": "ELECON/01-PP60057-b-Hyd.Ckt (SAC).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     193.8,
+     1073.1
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "270 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     193.8,
+     1083.3
+    ],
+    "numbers": [
+     270.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "215+215 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     206.6,
+     1103.7
+    ],
+    "numbers": [
+     215.0,
+     215.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "open_loop_flow": {
+    "value": "105+105 lpm",
+    "bbox": [
+     239.4,
+     1096.7,
+     316.9,
+     1103.8
+    ],
+    "numbers": [
+     105.0,
+     105.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     198.0,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     331.2,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A6 to A9",
+    "size": "38 X 5",
+    "connection": "G1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1117.1,
+     600.7,
+     1123.6
+    ]
+   },
+   {
+    "name": "A5,B5",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1117.1,
+     802.7,
+     1123.6
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "10 X 1.5",
+    "connection": "G 1/4\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1127.3,
+     600.7,
+     1133.8
+    ]
+   },
+   {
+    "name": "A1,B1,A2,B2",
+    "size": "48.3 X 7.14",
+    "connection": "SAE 1 1/2\",6000PSI",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1127.3,
+     802.1,
+     1133.8
+    ]
+   },
+   {
+    "name": "P1,L",
+    "size": "28 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.6,
+     1137.5,
+     600.7,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     598.4,
+     1154.2
+    ]
+   },
+   {
+    "name": "C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.4,
+     1157.8,
+     600.7,
+     1164.3
+    ]
+   },
+   {
+    "name": "B6 to B9",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1168.0,
+     600.7,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 16.01.2023"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60057-c-Hyd.Ckt (SAC).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     193.8,
+     1073.1
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "280 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     193.8,
+     1083.3
+    ],
+    "numbers": [
+     280.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "215+215 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     206.6,
+     1103.7
+    ],
+    "numbers": [
+     215.0,
+     215.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "open_loop_flow": {
+    "value": "105+105 lpm",
+    "bbox": [
+     239.4,
+     1096.7,
+     316.9,
+     1103.8
+    ],
+    "numbers": [
+     105.0,
+     105.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     198.0,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     331.2,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A6 to A9",
+    "size": "38 X 5",
+    "connection": "G1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1117.1,
+     600.7,
+     1123.6
+    ]
+   },
+   {
+    "name": "A5,B5",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1117.1,
+     802.7,
+     1123.6
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "10 X 1.5",
+    "connection": "G 1/4\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1127.3,
+     600.7,
+     1133.8
+    ]
+   },
+   {
+    "name": "A1,B1,A2,B2",
+    "size": "48.3 X 7.14",
+    "connection": "SAE 1 1/2\",6000PSI",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1127.3,
+     802.1,
+     1133.8
+    ]
+   },
+   {
+    "name": "P1,L",
+    "size": "28 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.6,
+     1137.5,
+     600.7,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     598.4,
+     1154.2
+    ]
+   },
+   {
+    "name": "C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.4,
+     1157.8,
+     600.7,
+     1164.3
+    ]
+   },
+   {
+    "name": "B6 to B9",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1168.0,
+     600.7,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply. 01.03.2023"
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 16.01.2023"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60057-d-Hyd.Ckt (SAC).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     193.8,
+     1073.1
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "280 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     193.8,
+     1083.3
+    ],
+    "numbers": [
+     280.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "215+215 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     206.6,
+     1103.7
+    ],
+    "numbers": [
+     215.0,
+     215.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "open_loop_flow": {
+    "value": "105+105 lpm",
+    "bbox": [
+     239.4,
+     1096.7,
+     316.9,
+     1103.8
+    ],
+    "numbers": [
+     105.0,
+     105.0
+    ],
+    "unit": "lpm",
+    "list_sep": "+"
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     198.0,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     331.2,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A6 to A9",
+    "size": "38 X 5",
+    "connection": "G1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1117.1,
+     600.7,
+     1123.6
+    ]
+   },
+   {
+    "name": "A5,B5",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE(Weldable)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1117.1,
+     802.7,
+     1123.6
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "10 X 1.5",
+    "connection": "G 1/4\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1127.3,
+     600.7,
+     1133.8
+    ]
+   },
+   {
+    "name": "A1,B1,A2,B2",
+    "size": "48.3 X 7.14",
+    "connection": "SAE 1 1/2\",6000PSI",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1127.3,
+     802.1,
+     1133.8
+    ]
+   },
+   {
+    "name": "P1,L",
+    "size": "28 X 3",
+    "connection": "G 1\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.6,
+     1137.5,
+     600.7,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "60.3 X 3.91",
+    "connection": "SAE 2\"",
+    "tube_pipe": "PIPE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     598.4,
+     1154.2
+    ]
+   },
+   {
+    "name": "C",
+    "size": "42 X 3",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.4,
+     1157.8,
+     600.7,
+     1164.3
+    ]
+   },
+   {
+    "name": "B6 to B9",
+    "size": "38 X 5",
+    "connection": "G 1 1/2\"",
+    "tube_pipe": "TUBE (Weldable)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1168.0,
+     600.7,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle. 22.08.2023"
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply. 01.03.2023"
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 16.01.2023"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 14.12.2022 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60057-e-Hyd.Ckt (SAC).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   3370,
+   2384
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     108.9,
+     2114.1,
+     360.5,
+     2128.3
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     108.9,
+     2134.5,
+     384.9,
+     2148.5
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "230/250 Bar",
+    "bbox": [
+     108.9,
+     2154.9,
+     407.2,
+     2169.1
+    ],
+    "numbers": [
+     230.0,
+     250.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     485.8,
+     2154.9,
+     725.4,
+     2168.9
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     108.9,
+     2175.4,
+     439.6,
+     2189.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "490/125 lpm",
+    "bbox": [
+     108.9,
+     2195.8,
+     406.9,
+     2209.9
+    ],
+    "numbers": [
+     490.0,
+     125.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "90 lpm",
+    "bbox": [
+     476.3,
+     2195.8,
+     599.2,
+     2209.9
+    ],
+    "numbers": [
+     90.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "24 V DC",
+    "bbox": [
+     108.9,
+     2216.2,
+     387.4,
+     2230.5
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "24 V DC",
+    "bbox": [
+     476.4,
+     2216.2,
+     654.4,
+     2230.3
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     108.9,
+     2236.6,
+     499.3,
+     2250.9
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     345.4,
+     2258.1,
+     564.2,
+     2271.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     345.4,
+     2278.5,
+     564.0,
+     2291.7
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     345.3,
+     2299.0,
+     564.0,
+     2312.2
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     108.9,
+     2319.4,
+     592.1,
+     2353.0
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     827.3,
+     2094.6,
+     1173.1,
+     2128.3
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     827.3,
+     2135.7,
+     1373.5,
+     2169.2
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A1,B1",
+    "size": "2 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d873 x 9.52(t)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2236.6,
+     1178.0,
+     2249.7
+    ]
+   },
+   {
+    "name": "C",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d842 X 3(t)",
+    "table": "B",
+    "bbox": [
+     1221.3,
+     2236.6,
+     1572.3,
+     2249.7
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d838 x 5(t)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2257.1,
+     1162.0,
+     2270.2
+    ]
+   },
+   {
+    "name": "P1, P2",
+    "size": "G 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810 X 2(t)",
+    "table": "B",
+    "bbox": [
+     1221.6,
+     2257.1,
+     1572.3,
+     2270.2
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816 X 2(t)",
+    "table": "A",
+    "bbox": [
+     818.5,
+     2277.5,
+     1164.0,
+     2290.6
+    ]
+   },
+   {
+    "name": "A5,B5,A6,B6",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3 X 7.14(t)",
+    "table": "B",
+    "bbox": [
+     1220.7,
+     2277.5,
+     1597.8,
+     2290.6
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3 X 3.91(t)",
+    "table": "A",
+    "bbox": [
+     818.6,
+     2297.9,
+     1189.4,
+     2311.0
+    ]
+   },
+   {
+    "name": "L4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818 X 2(t)",
+    "table": "A",
+    "bbox": [
+     819.3,
+     2318.3,
+     1164.0,
+     2331.4
+    ]
+   },
+   {
+    "name": "L5",
+    "size": "G 3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822 X 2(t)",
+    "table": "A",
+    "bbox": [
+     819.3,
+     2338.8,
+     1164.0,
+     2351.9
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable for 135% overload capacity for 20 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection."
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+   }
+  ],
+  "warnings": [],
+  "text_height": 13.1,
+  "file": "ELECON/01-PP60058-0-Hyd.Ckt (E+T).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     115.7,
+     1470.9,
+     287.4,
+     1480.6
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     115.7,
+     1484.8,
+     304.0,
+     1494.4
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "230/250 Bar",
+    "bbox": [
+     115.7,
+     1498.8,
+     319.2,
+     1508.4
+    ],
+    "numbers": [
+     230.0,
+     250.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     373.0,
+     1498.8,
+     536.5,
+     1508.4
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     115.7,
+     1512.7,
+     341.4,
+     1522.3
+    ]
+   },
+   "main_pump_flow": {
+    "value": "490/125 lpm",
+    "bbox": [
+     115.7,
+     1526.7,
+     319.1,
+     1536.3
+    ],
+    "numbers": [
+     490.0,
+     125.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "94 lpm",
+    "bbox": [
+     366.4,
+     1526.7,
+     450.3,
+     1536.2
+    ],
+    "numbers": [
+     94.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     115.7,
+     1540.6,
+     309.7,
+     1550.4
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     366.5,
+     1540.6,
+     492.0,
+     1550.2
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     115.7,
+     1554.5,
+     382.1,
+     1564.3
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     277.1,
+     1569.1,
+     426.5,
+     1578.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.0,
+     1583.1,
+     426.4,
+     1592.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.1,
+     1597.1,
+     426.4,
+     1606.0
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     115.7,
+     1611.0,
+     445.4,
+     1633.9
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     605.9,
+     1457.7,
+     842.0,
+     1480.5
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     605.9,
+     1485.6,
+     978.8,
+     1508.5
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A1,B1",
+    "size": "2 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d873 x 9.52(t)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1554.5,
+     845.4,
+     1563.4
+    ]
+   },
+   {
+    "name": "C",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d842 X 3(t)",
+    "table": "B",
+    "bbox": [
+     874.9,
+     1554.5,
+     1114.5,
+     1563.4
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d838 x 5(t)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1568.5,
+     834.5,
+     1577.5
+    ]
+   },
+   {
+    "name": "P1, P2",
+    "size": "G 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810 X 2(t)",
+    "table": "B",
+    "bbox": [
+     875.1,
+     1568.5,
+     1114.5,
+     1577.5
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816 X 2(t)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1582.4,
+     835.8,
+     1591.4
+    ]
+   },
+   {
+    "name": "A5,B5,A6,B6",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3 X 7.14(t)",
+    "table": "B",
+    "bbox": [
+     874.5,
+     1582.5,
+     1131.9,
+     1591.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3 X 3.91(t)",
+    "table": "A",
+    "bbox": [
+     600.0,
+     1596.4,
+     853.2,
+     1605.3
+    ]
+   },
+   {
+    "name": "L4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818 X 2(t)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1610.3,
+     835.8,
+     1619.2
+    ]
+   },
+   {
+    "name": "L5",
+    "size": "G 3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822 X 2(t)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1624.2,
+     835.8,
+     1633.2
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable for 135% overload capacity for 20 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection."
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022 D"
+   }
+  ],
+  "warnings": [],
+  "text_height": 8.9,
+  "file": "ELECON/01-PP60058-a-Hyd.Ckt (E+T).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     75.3,
+     1495.3,
+     253.5,
+     1505.4
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     75.3,
+     1509.7,
+     270.8,
+     1519.7
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "230/250 Bar",
+    "bbox": [
+     75.3,
+     1524.2,
+     286.6,
+     1534.2
+    ],
+    "numbers": [
+     230.0,
+     250.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     342.2,
+     1524.2,
+     511.9,
+     1534.2
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     75.3,
+     1538.7,
+     309.5,
+     1548.7
+    ]
+   },
+   "main_pump_flow": {
+    "value": "490/125 lpm",
+    "bbox": [
+     75.3,
+     1553.1,
+     286.4,
+     1563.1
+    ],
+    "numbers": [
+     490.0,
+     125.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "87 lpm",
+    "bbox": [
+     335.5,
+     1553.1,
+     422.6,
+     1563.1
+    ],
+    "numbers": [
+     87.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     75.3,
+     1567.6,
+     276.6,
+     1577.8
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     335.5,
+     1567.6,
+     465.8,
+     1577.5
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     75.3,
+     1582.0,
+     351.8,
+     1592.2
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     242.7,
+     1597.3,
+     397.8,
+     1606.6
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     242.7,
+     1611.7,
+     397.6,
+     1621.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     242.7,
+     1626.2,
+     397.6,
+     1635.6
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     75.4,
+     1640.7,
+     417.5,
+     1664.5
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     584.0,
+     1481.6,
+     829.0,
+     1505.3
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     584.0,
+     1510.5,
+     970.9,
+     1534.3
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A1,B1",
+    "size": "2 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d873 x 9.52(t)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1582.0,
+     832.5,
+     1591.3
+    ]
+   },
+   {
+    "name": "C",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d842 X 3(t)",
+    "table": "B",
+    "bbox": [
+     863.0,
+     1582.0,
+     1111.8,
+     1591.3
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d838 x 5(t)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1596.5,
+     821.2,
+     1605.8
+    ]
+   },
+   {
+    "name": "P1, P2",
+    "size": "G 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810 X 2(t)",
+    "table": "B",
+    "bbox": [
+     863.3,
+     1596.5,
+     1111.8,
+     1605.8
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816 X 2(t)",
+    "table": "A",
+    "bbox": [
+     577.9,
+     1611.1,
+     822.6,
+     1620.4
+    ]
+   },
+   {
+    "name": "A5,B5,A6,B6",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3 X 7.14(t)",
+    "table": "B",
+    "bbox": [
+     862.6,
+     1611.1,
+     1129.8,
+     1620.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3 X 3.91(t)",
+    "table": "A",
+    "bbox": [
+     578.0,
+     1625.5,
+     840.6,
+     1634.8
+    ]
+   },
+   {
+    "name": "L4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818 X 2(t)",
+    "table": "A",
+    "bbox": [
+     578.5,
+     1640.0,
+     822.6,
+     1649.3
+    ]
+   },
+   {
+    "name": "L5",
+    "size": "G 3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822 X 2(t)",
+    "table": "A",
+    "bbox": [
+     578.5,
+     1654.4,
+     822.6,
+     1663.7
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 14.12.2022"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 9.3,
+  "file": "ELECON/01-PP60058-b-Hyd.Ckt (E+T).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     115.7,
+     1470.9,
+     287.4,
+     1480.6
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     115.7,
+     1484.8,
+     304.0,
+     1494.4
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "230/250 Bar",
+    "bbox": [
+     115.7,
+     1498.8,
+     319.2,
+     1508.4
+    ],
+    "numbers": [
+     230.0,
+     250.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     373.0,
+     1498.8,
+     536.5,
+     1508.4
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     115.7,
+     1512.7,
+     341.4,
+     1522.3
+    ]
+   },
+   "main_pump_flow": {
+    "value": "490/125 lpm",
+    "bbox": [
+     115.7,
+     1526.7,
+     319.1,
+     1536.3
+    ],
+    "numbers": [
+     490.0,
+     125.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "87 lpm",
+    "bbox": [
+     366.4,
+     1526.7,
+     450.3,
+     1536.2
+    ],
+    "numbers": [
+     87.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     115.7,
+     1540.6,
+     309.7,
+     1550.4
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     366.5,
+     1540.6,
+     492.0,
+     1550.2
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     115.7,
+     1554.5,
+     382.1,
+     1564.3
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     277.1,
+     1569.1,
+     426.5,
+     1578.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.0,
+     1583.1,
+     426.4,
+     1592.1
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     277.1,
+     1597.1,
+     426.4,
+     1606.0
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     115.7,
+     1611.0,
+     445.4,
+     1633.9
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     605.9,
+     1457.7,
+     842.0,
+     1480.5
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     605.9,
+     1485.6,
+     978.8,
+     1508.5
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A1,B1",
+    "size": "2 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d873 x 9.52(t)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1554.5,
+     845.4,
+     1563.4
+    ]
+   },
+   {
+    "name": "C",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d842 X 3(t)",
+    "table": "B",
+    "bbox": [
+     874.9,
+     1554.5,
+     1114.5,
+     1563.4
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d838 x 5(t)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1568.5,
+     834.5,
+     1577.5
+    ]
+   },
+   {
+    "name": "P1, P2",
+    "size": "G 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810 X 2(t)",
+    "table": "B",
+    "bbox": [
+     875.1,
+     1568.5,
+     1114.5,
+     1577.5
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816 X 2(t)",
+    "table": "A",
+    "bbox": [
+     599.9,
+     1582.4,
+     835.8,
+     1591.4
+    ]
+   },
+   {
+    "name": "A5,B5,A6,B6",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3 X 7.14(t)",
+    "table": "B",
+    "bbox": [
+     874.5,
+     1582.5,
+     1131.9,
+     1591.4
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3 X 3.91(t)",
+    "table": "A",
+    "bbox": [
+     600.0,
+     1596.4,
+     853.2,
+     1605.3
+    ]
+   },
+   {
+    "name": "L4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818 X 2(t)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1610.3,
+     835.8,
+     1619.2
+    ]
+   },
+   {
+    "name": "L5",
+    "size": "G 3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822 X 2(t)",
+    "table": "A",
+    "bbox": [
+     600.5,
+     1624.2,
+     835.8,
+     1633.2
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle."
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply. 02.01.2023 D"
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 14.12.2022 D"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022 D"
+   }
+  ],
+  "warnings": [],
+  "text_height": 8.9,
+  "file": "ELECON/01-PP60058-c-Hyd.Ckt (E+T).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     193.8,
+     1073.1
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "230/250 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     205.0,
+     1083.3
+    ],
+    "numbers": [
+     230.0,
+     250.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "490/125 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     204.8,
+     1103.7
+    ],
+    "numbers": [
+     490.0,
+     125.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "87 lpm",
+    "bbox": [
+     239.4,
+     1096.7,
+     300.8,
+     1103.7
+    ],
+    "numbers": [
+     87.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     198.0,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     331.2,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A1,B1",
+    "size": "2 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d873 x 9.52(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1117.1,
+     589.6,
+     1123.6
+    ]
+   },
+   {
+    "name": "C",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d842 X 3(t)",
+    "table": "B",
+    "bbox": [
+     611.0,
+     1117.1,
+     786.2,
+     1123.6
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d838 x 5(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1127.3,
+     581.6,
+     1133.8
+    ]
+   },
+   {
+    "name": "P1, P2",
+    "size": "G 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810 X 2(t)",
+    "table": "B",
+    "bbox": [
+     611.2,
+     1127.3,
+     786.2,
+     1133.8
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1137.5,
+     582.6,
+     1144.0
+    ]
+   },
+   {
+    "name": "A5,B5,A6,B6",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3 X 7.14(t)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1137.5,
+     798.9,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3 X 3.91(t)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     595.3,
+     1154.2
+    ]
+   },
+   {
+    "name": "L4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1157.7,
+     582.6,
+     1164.3
+    ]
+   },
+   {
+    "name": "L5",
+    "size": "G 3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1167.9,
+     582.6,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle. 16.01.2023"
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply. 02.01.2023"
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 14.12.2022"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60058-d-Hyd.Ckt (E+T) - Copy.pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     193.8,
+     1073.1
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "230/250 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     205.0,
+     1083.3
+    ],
+    "numbers": [
+     230.0,
+     250.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "490/125 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     204.8,
+     1103.7
+    ],
+    "numbers": [
+     490.0,
+     125.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "87 lpm",
+    "bbox": [
+     239.4,
+     1096.7,
+     300.8,
+     1103.7
+    ],
+    "numbers": [
+     87.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     198.0,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     331.2,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A1,B1",
+    "size": "2 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d873 x 9.52(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1117.1,
+     589.6,
+     1123.6
+    ]
+   },
+   {
+    "name": "C",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d842 X 3(t)",
+    "table": "B",
+    "bbox": [
+     611.0,
+     1117.1,
+     786.2,
+     1123.6
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d838 x 5(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1127.3,
+     581.6,
+     1133.8
+    ]
+   },
+   {
+    "name": "P1, P2",
+    "size": "G 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810 X 2(t)",
+    "table": "B",
+    "bbox": [
+     611.2,
+     1127.3,
+     786.2,
+     1133.8
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1137.5,
+     582.6,
+     1144.0
+    ]
+   },
+   {
+    "name": "A5,B5,A6,B6",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3 X 7.14(t)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1137.5,
+     798.9,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3 X 3.91(t)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     595.3,
+     1154.2
+    ]
+   },
+   {
+    "name": "L4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1157.7,
+     582.6,
+     1164.3
+    ]
+   },
+   {
+    "name": "L5",
+    "size": "G 3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1167.9,
+     582.6,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle. 16.01.2023"
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply. 02.01.2023"
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 14.12.2022"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60058-d-Hyd.Ckt (E+T).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   1684,
+   1191
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "NA",
+    "bbox": [
+     56.1,
+     1055.9,
+     181.7,
+     1063.0
+    ]
+   },
+   "design_pressure": {
+    "value": "300 Bar",
+    "bbox": [
+     56.1,
+     1066.1,
+     193.8,
+     1073.1
+    ],
+    "numbers": [
+     300.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "255/265 Bar",
+    "bbox": [
+     56.1,
+     1076.3,
+     205.0,
+     1083.3
+    ],
+    "numbers": [
+     255.0,
+     265.0
+    ],
+    "unit": "Bar",
+    "list_sep": "/"
+   },
+   "test_pressure": {
+    "value": "315 Bar ( By External Source )",
+    "bbox": [
+     244.2,
+     1076.3,
+     363.7,
+     1083.3
+    ],
+    "numbers": [
+     315.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Minerial ISO VG68",
+    "bbox": [
+     56.1,
+     1086.5,
+     221.1,
+     1093.5
+    ]
+   },
+   "main_pump_flow": {
+    "value": "496/125 lpm",
+    "bbox": [
+     56.1,
+     1096.7,
+     204.8,
+     1103.7
+    ],
+    "numbers": [
+     496.0,
+     125.0
+    ],
+    "unit": "lpm",
+    "list_sep": "/"
+   },
+   "rec_pump_flow": {
+    "value": "87 lpm",
+    "bbox": [
+     239.4,
+     1096.7,
+     300.8,
+     1103.7
+    ],
+    "numbers": [
+     87.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     56.1,
+     1106.9,
+     198.0,
+     1114.0
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "instrumentation_voltage": {
+    "value": "220 V AC",
+    "bbox": [
+     239.4,
+     1106.9,
+     331.2,
+     1113.9
+    ],
+    "numbers": [
+     220.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC"
+   },
+   "supply_voltage": {
+    "value": "415 +/-10% V AC, 50Hz +/-5%",
+    "bbox": [
+     56.1,
+     1117.1,
+     250.9,
+     1124.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "AC",
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 Gr.A",
+    "bbox": [
+     174.1,
+     1127.8,
+     283.3,
+     1134.3
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.0,
+     1138.0,
+     283.2,
+     1144.5
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     174.1,
+     1148.2,
+     283.2,
+     1154.7
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "bbox": [
+     56.1,
+     1158.4,
+     297.2,
+     1175.1
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "bbox": [
+     414.6,
+     1046.3,
+     587.0,
+     1062.9
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     414.6,
+     1066.7,
+     687.0,
+     1083.4
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "A1,B1",
+    "size": "2 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d873 x 9.52(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1117.1,
+     589.6,
+     1123.6
+    ]
+   },
+   {
+    "name": "C",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d842 X 3(t)",
+    "table": "B",
+    "bbox": [
+     611.0,
+     1117.1,
+     786.2,
+     1123.6
+    ]
+   },
+   {
+    "name": "A2,B2",
+    "size": "G 1 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d838 x 5(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1127.3,
+     581.6,
+     1133.8
+    ]
+   },
+   {
+    "name": "P1, P2",
+    "size": "G 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810 X 2(t)",
+    "table": "B",
+    "bbox": [
+     611.2,
+     1127.3,
+     786.2,
+     1133.8
+    ]
+   },
+   {
+    "name": "A3,B3,A4,B4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.1,
+     1137.5,
+     582.6,
+     1144.0
+    ]
+   },
+   {
+    "name": "A5,B5,A6,B6",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3 X 7.14(t)",
+    "table": "B",
+    "bbox": [
+     610.8,
+     1137.5,
+     798.9,
+     1144.0
+    ]
+   },
+   {
+    "name": "W1, W2",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3 X 3.91(t)",
+    "table": "A",
+    "bbox": [
+     410.2,
+     1147.7,
+     595.3,
+     1154.2
+    ]
+   },
+   {
+    "name": "L4",
+    "size": "G 1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1157.7,
+     582.6,
+     1164.3
+    ]
+   },
+   {
+    "name": "L5",
+    "size": "G 3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822 X 2(t)",
+    "table": "A",
+    "bbox": [
+     410.5,
+     1167.9,
+     582.6,
+     1174.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle. 30.01.202 16.01.2023"
+   },
+   {
+    "no": "2",
+    "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply. 02.01.2023"
+   },
+   {
+    "no": "3",
+    "text": "End Termination shall be suitable for weldable connection. 14.12.2022"
+   },
+   {
+    "no": "4",
+    "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing. 17.11.2022"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.5,
+  "file": "ELECON/01-PP60058-e-Hyd.Ckt (E+T).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   3370,
+   2384
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "400827-0603644",
+    "bbox": [
+     99.8,
+     2111.8,
+     421.5,
+     2126.0
+    ]
+   },
+   "design_pressure": {
+    "value": "230 Bar",
+    "bbox": [
+     99.8,
+     2132.2,
+     375.7,
+     2146.3
+    ],
+    "numbers": [
+     230.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "190 Bar",
+    "bbox": [
+     99.8,
+     2152.6,
+     375.7,
+     2166.8
+    ],
+    "numbers": [
+     190.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "285 Bar ( By External Source )",
+    "bbox": [
+     476.7,
+     2152.6,
+     716.3,
+     2166.7
+    ],
+    "numbers": [
+     285.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Mineral ISO VG46",
+    "bbox": [
+     99.8,
+     2173.1,
+     427.8,
+     2187.2
+    ]
+   },
+   "main_pump_flow": {
+    "value": "N.A.",
+    "bbox": [
+     99.8,
+     2193.5,
+     356.7,
+     2207.6
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "rec_pump_flow": {
+    "value": "-",
+    "bbox": [
+     467.0,
+     2193.5,
+     559.9,
+     2207.6
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "24V DC",
+    "bbox": [
+     99.8,
+     2213.9,
+     375.0,
+     2228.2
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "24V DC",
+    "bbox": [
+     467.3,
+     2213.9,
+     642.1,
+     2228.0
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "supply_voltage": {
+    "value": "N.A.",
+    "bbox": [
+     99.8,
+     2234.3,
+     356.7,
+     2248.6
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "piping_material": {
+    "value": "CARBON STEEL",
+    "bbox": [
+     336.1,
+     2276.2,
+     576.9,
+     2289.4
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "CARBON STEEL",
+    "bbox": [
+     336.2,
+     2296.7,
+     576.9,
+     2309.9
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "bbox": [
+     99.7,
+     2317.1,
+     593.0,
+     2350.7
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "bbox": [
+     818.2,
+     2092.3,
+     1167.2,
+     2126.0
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     818.2,
+     2133.4,
+     1364.3,
+     2166.9
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "Pm",
+    "size": "G1\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d825x3(t)",
+    "table": "A",
+    "bbox": [
+     810.2,
+     2234.3,
+     1146.5,
+     2247.4
+    ]
+   },
+   {
+    "name": "Tm",
+    "size": "G1 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d835x3(t)",
+    "table": "A",
+    "bbox": [
+     809.7,
+     2254.8,
+     1146.5,
+     2267.9
+    ]
+   },
+   {
+    "name": "Lm",
+    "size": "G1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818x2(t)",
+    "table": "A",
+    "bbox": [
+     810.2,
+     2275.2,
+     1146.5,
+     2288.3
+    ]
+   },
+   {
+    "name": "A1,A2,B1,B2",
+    "size": "G1\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d825x3(t)",
+    "table": "A",
+    "bbox": [
+     809.4,
+     2295.6,
+     1146.5,
+     2308.7
+    ]
+   },
+   {
+    "name": "A3,B3",
+    "size": "G1\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d825x3(t)",
+    "table": "A",
+    "bbox": [
+     809.4,
+     2316.0,
+     1146.5,
+     2329.1
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Manifold Material - GGG40. 11/02/202"
+   },
+   {
+    "no": "2",
+    "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct 03/01/202 02/12/202"
+   }
+  ],
+  "warnings": [],
+  "text_height": 13.1,
+  "file": "SMS/01-HV11452-c-Hyd.Ckt.pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   3370,
+   2384
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "400827-0603644",
+    "bbox": [
+     78.6,
+     2193.4,
+     306.1,
+     2203.5
+    ]
+   },
+   "design_pressure": {
+    "value": "230 Bar",
+    "bbox": [
+     78.6,
+     2207.8,
+     273.7,
+     2217.8
+    ],
+    "numbers": [
+     230.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "190 Bar",
+    "bbox": [
+     78.6,
+     2222.3,
+     273.7,
+     2232.3
+    ],
+    "numbers": [
+     190.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "285 Bar ( By External Source )",
+    "bbox": [
+     345.0,
+     2222.3,
+     514.5,
+     2232.2
+    ],
+    "numbers": [
+     285.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Mineral ISO VG46",
+    "bbox": [
+     78.6,
+     2236.7,
+     310.6,
+     2246.7
+    ]
+   },
+   "main_pump_flow": {
+    "value": "N.A.",
+    "bbox": [
+     78.6,
+     2251.1,
+     260.3,
+     2261.1
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "rec_pump_flow": {
+    "value": "N.A.",
+    "bbox": [
+     338.3,
+     2251.1,
+     416.4,
+     2261.1
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "24V DC",
+    "bbox": [
+     78.6,
+     2265.6,
+     273.3,
+     2275.6
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "24 VDC",
+    "bbox": [
+     338.4,
+     2265.6,
+     462.0,
+     2275.5
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "supply_voltage": {
+    "value": "N.A.",
+    "bbox": [
+     78.6,
+     2280.0,
+     260.3,
+     2290.1
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     245.7,
+     2309.6,
+     400.3,
+     2318.9
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     245.7,
+     2324.0,
+     400.3,
+     2333.4
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "bbox": [
+     78.6,
+     2338.6,
+     427.4,
+     2362.2
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "bbox": [
+     586.4,
+     2179.7,
+     833.1,
+     2203.4
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     586.4,
+     2208.6,
+     972.6,
+     2232.3
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P1,P2",
+    "size": "G1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816x2 (t)",
+    "table": "A",
+    "bbox": [
+     580.8,
+     2280.0,
+     820.8,
+     2289.3
+    ]
+   },
+   {
+    "name": "RCV X17~X20",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "B",
+    "bbox": [
+     865.2,
+     2280.0,
+     1111.8,
+     2289.3
+    ]
+   },
+   {
+    "name": "T1,T2",
+    "size": "G1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818x2 (t)",
+    "table": "A",
+    "bbox": [
+     580.4,
+     2294.4,
+     820.8,
+     2303.7
+    ]
+   },
+   {
+    "name": "PSDVX1~X4",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "B",
+    "bbox": [
+     865.2,
+     2294.4,
+     1111.8,
+     2303.7
+    ]
+   },
+   {
+    "name": "P3",
+    "size": "G3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d820x2.5 (t)",
+    "table": "A",
+    "bbox": [
+     580.8,
+     2308.9,
+     827.6,
+     2318.2
+    ]
+   },
+   {
+    "name": "PSDVX17~X20",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "B",
+    "bbox": [
+     865.2,
+     2308.9,
+     1111.8,
+     2318.2
+    ]
+   },
+   {
+    "name": "T3",
+    "size": "G1\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d828x3 (t)",
+    "table": "A",
+    "bbox": [
+     580.4,
+     2323.3,
+     820.8,
+     2332.6
+    ]
+   },
+   {
+    "name": "SDV X1~X2",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "A",
+    "bbox": [
+     580.5,
+     2337.8,
+     820.8,
+     2347.1
+    ]
+   },
+   {
+    "name": "RBV X1~X2",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "A",
+    "bbox": [
+     580.8,
+     2352.2,
+     820.8,
+     2361.5
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Manifold Material - GGG40. 11/02/2022 DRN Kunde/Customer"
+   },
+   {
+    "no": "2",
+    "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct 03/01/2022 DRN SMS India Pvt. Ltd and JB to metal duct will be through flexible metal conduit. 13/12/2021 DRN"
+   }
+  ],
+  "warnings": [],
+  "text_height": 9.3,
+  "file": "SMS/01-HV11495-c-Hyd.Ckt.pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "400827-0603644",
+    "bbox": [
+     96.0,
+     1524.4,
+     251.1,
+     1531.3
+    ]
+   },
+   "design_pressure": {
+    "value": "230 Bar",
+    "bbox": [
+     96.0,
+     1534.2,
+     229.0,
+     1541.0
+    ],
+    "numbers": [
+     230.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "190 Bar",
+    "bbox": [
+     96.0,
+     1544.1,
+     229.0,
+     1550.9
+    ],
+    "numbers": [
+     190.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "285 Bar ( By External Source )",
+    "bbox": [
+     277.6,
+     1544.1,
+     393.1,
+     1550.9
+    ],
+    "numbers": [
+     285.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Mineral ISO VG46",
+    "bbox": [
+     96.0,
+     1553.9,
+     254.1,
+     1560.7
+    ]
+   },
+   "main_pump_flow": {
+    "value": "N.A.",
+    "bbox": [
+     96.0,
+     1563.7,
+     219.8,
+     1570.5
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "rec_pump_flow": {
+    "value": "N.A.",
+    "bbox": [
+     273.0,
+     1563.7,
+     326.4,
+     1570.5
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "solenoid_voltage": {
+    "value": "24V DC",
+    "bbox": [
+     96.0,
+     1573.6,
+     228.7,
+     1580.5
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "24 VDC",
+    "bbox": [
+     273.1,
+     1573.6,
+     357.4,
+     1580.4
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "supply_voltage": {
+    "value": "N.A.",
+    "bbox": [
+     96.0,
+     1583.4,
+     219.8,
+     1590.3
+    ],
+    "numbers": [],
+    "unit": null
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     210.0,
+     1603.7,
+     315.3,
+     1610.0
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     209.9,
+     1613.5,
+     315.3,
+     1619.9
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "bbox": [
+     95.9,
+     1623.4,
+     333.8,
+     1639.5
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "bbox": [
+     442.2,
+     1515.0,
+     610.5,
+     1531.2
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     442.2,
+     1534.8,
+     705.6,
+     1551.0
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "P1,P2",
+    "size": "G1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d816x2 (t)",
+    "table": "A",
+    "bbox": [
+     438.5,
+     1583.4,
+     602.1,
+     1589.7
+    ]
+   },
+   {
+    "name": "RCV X17~X20",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "B",
+    "bbox": [
+     632.3,
+     1583.4,
+     800.4,
+     1589.7
+    ]
+   },
+   {
+    "name": "T1,T2",
+    "size": "G1/2\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d818x2 (t)",
+    "table": "A",
+    "bbox": [
+     438.2,
+     1593.4,
+     602.1,
+     1599.7
+    ]
+   },
+   {
+    "name": "PSDVX1~X4",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "B",
+    "bbox": [
+     632.3,
+     1593.4,
+     800.4,
+     1599.7
+    ]
+   },
+   {
+    "name": "P3",
+    "size": "G3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d820x2.5 (t)",
+    "table": "A",
+    "bbox": [
+     438.5,
+     1603.2,
+     606.7,
+     1609.5
+    ]
+   },
+   {
+    "name": "PSDVX17~X20",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "B",
+    "bbox": [
+     632.3,
+     1603.2,
+     800.4,
+     1609.5
+    ]
+   },
+   {
+    "name": "T3",
+    "size": "G1\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d828x3 (t)",
+    "table": "A",
+    "bbox": [
+     438.2,
+     1613.0,
+     602.1,
+     1619.4
+    ]
+   },
+   {
+    "name": "SDV X1~X2",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "A",
+    "bbox": [
+     438.3,
+     1622.9,
+     602.1,
+     1629.2
+    ]
+   },
+   {
+    "name": "RBV X1~X2",
+    "size": "G3/8\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d810x2 (t)",
+    "table": "A",
+    "bbox": [
+     438.5,
+     1632.7,
+     602.1,
+     1639.1
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Manifold Material - GGG40. 11/02/2022 DRN Kunde/Customer"
+   },
+   {
+    "no": "2",
+    "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct 03/01/2022 DRN SMS India Pvt. Ltd and JB to metal duct will be through flexible metal conduit. 13/12/2021 DRN"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.3,
+  "file": "SMS/01-HV11495-d-Hyd.Ckt (As Built).pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   3370,
+   2384
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "400827-0603644",
+    "bbox": [
+     78.6,
+     2193.4,
+     306.1,
+     2203.5
+    ]
+   },
+   "design_pressure": {
+    "value": "230 Bar",
+    "bbox": [
+     78.6,
+     2207.8,
+     273.7,
+     2217.8
+    ],
+    "numbers": [
+     230.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "190 Bar",
+    "bbox": [
+     78.6,
+     2222.3,
+     273.7,
+     2232.3
+    ],
+    "numbers": [
+     190.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "285 Bar ( By External Source )",
+    "bbox": [
+     345.0,
+     2222.3,
+     514.5,
+     2232.2
+    ],
+    "numbers": [
+     285.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Mineral ISO VG46",
+    "bbox": [
+     78.6,
+     2236.7,
+     310.6,
+     2246.7
+    ]
+   },
+   "main_pump_flow": {
+    "value": "250 lpm",
+    "bbox": [
+     78.6,
+     2251.1,
+     273.5,
+     2261.1
+    ],
+    "numbers": [
+     250.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "rec_pump_flow": {
+    "value": "~108 lpm",
+    "bbox": [
+     338.3,
+     2251.1,
+     434.4,
+     2261.1
+    ],
+    "numbers": [
+     108.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "24V DC",
+    "bbox": [
+     78.6,
+     2265.6,
+     273.3,
+     2275.6
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "24 VDC",
+    "bbox": [
+     338.4,
+     2265.6,
+     462.0,
+     2275.5
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "supply_voltage": {
+    "value": "415V(+10%/-15%), 50Hz(+/-6%)",
+    "bbox": [
+     78.6,
+     2280.0,
+     361.4,
+     2290.1
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 E250A",
+    "bbox": [
+     245.7,
+     2295.1,
+     408.1,
+     2304.5
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     245.7,
+     2309.6,
+     400.3,
+     2318.9
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     245.7,
+     2324.0,
+     400.3,
+     2333.4
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "bbox": [
+     78.6,
+     2338.6,
+     427.4,
+     2362.2
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "bbox": [
+     586.4,
+     2179.7,
+     833.1,
+     2203.4
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     586.4,
+     2208.6,
+     972.6,
+     2232.3
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "Pm",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3x7.14 (t)",
+    "table": "A",
+    "bbox": [
+     580.8,
+     2280.0,
+     838.8,
+     2289.3
+    ]
+   },
+   {
+    "name": "Tac",
+    "size": "G1 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d835x3 (t)",
+    "table": "A",
+    "bbox": [
+     580.4,
+     2294.4,
+     820.8,
+     2303.7
+    ]
+   },
+   {
+    "name": "Tm",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3x3.91 (t)",
+    "table": "A",
+    "bbox": [
+     580.4,
+     2308.8,
+     838.8,
+     2318.2
+    ]
+   },
+   {
+    "name": "Wi, Wo",
+    "size": "DN50",
+    "connection": "SORF,ANSIB16.5,#150",
+    "tube_pipe": "\u00d860.3x3.91 (t)",
+    "table": "A",
+    "bbox": [
+     580.3,
+     2323.2,
+     838.8,
+     2332.6
+    ]
+   },
+   {
+    "name": "Lm",
+    "size": "G3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822x3 (t)",
+    "table": "A",
+    "bbox": [
+     580.7,
+     2337.8,
+     820.8,
+     2347.1
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Manifold Material - GGG40. 11.02.2022 DRN Kunde/Customer"
+   },
+   {
+    "no": "2",
+    "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct 03.01.2022 DRN SMS India Pvt. Ltd and JB to metal duct will be through flexible metal conduit. 07.12.2021 DRN"
+   }
+  ],
+  "warnings": [],
+  "text_height": 9.3,
+  "file": "SMS/01-PP02123-c-Hyd.Ckt.pdf",
+  "seconds": 0.1
+ },
+ {
+  "page": 1,
+  "page_size": [
+   2384,
+   1684
+  ],
+  "specs": {
+   "customer_drawing_no": {
+    "value": "400827-0603644",
+    "bbox": [
+     96.0,
+     1524.4,
+     251.1,
+     1531.3
+    ]
+   },
+   "design_pressure": {
+    "value": "230 Bar",
+    "bbox": [
+     96.0,
+     1534.2,
+     229.0,
+     1541.0
+    ],
+    "numbers": [
+     230.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_pressure": {
+    "value": "190 Bar",
+    "bbox": [
+     96.0,
+     1544.1,
+     229.0,
+     1550.9
+    ],
+    "numbers": [
+     190.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "test_pressure": {
+    "value": "285 Bar ( By External Source )",
+    "bbox": [
+     277.6,
+     1544.1,
+     393.1,
+     1550.9
+    ],
+    "numbers": [
+     285.0
+    ],
+    "unit": "Bar",
+    "list_sep": null
+   },
+   "working_fluid": {
+    "value": "Mineral ISO VG46",
+    "bbox": [
+     96.0,
+     1553.9,
+     254.1,
+     1560.7
+    ]
+   },
+   "main_pump_flow": {
+    "value": "250 lpm",
+    "bbox": [
+     96.0,
+     1563.7,
+     228.9,
+     1570.5
+    ],
+    "numbers": [
+     250.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "rec_pump_flow": {
+    "value": "~108 lpm",
+    "bbox": [
+     273.0,
+     1563.7,
+     338.6,
+     1570.5
+    ],
+    "numbers": [
+     108.0
+    ],
+    "unit": "lpm",
+    "list_sep": null
+   },
+   "solenoid_voltage": {
+    "value": "24V DC",
+    "bbox": [
+     96.0,
+     1573.6,
+     228.7,
+     1580.5
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "instrumentation_voltage": {
+    "value": "24 VDC",
+    "bbox": [
+     273.1,
+     1573.6,
+     357.4,
+     1580.4
+    ],
+    "numbers": [
+     24.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "current": "DC"
+   },
+   "supply_voltage": {
+    "value": "415V(+10%/-15%), 50Hz(+/-6%)",
+    "bbox": [
+     96.0,
+     1583.4,
+     288.8,
+     1590.3
+    ],
+    "numbers": [
+     415.0
+    ],
+    "unit": "V",
+    "list_sep": null,
+    "frequency_hz": 50.0
+   },
+   "tank_material": {
+    "value": "IS 2062 E250A",
+    "bbox": [
+     209.9,
+     1593.7,
+     320.7,
+     1600.2
+    ]
+   },
+   "piping_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     210.0,
+     1603.7,
+     315.3,
+     1610.0
+    ]
+   },
+   "fittings_flanges_material": {
+    "value": "Carbon Steel",
+    "bbox": [
+     209.9,
+     1613.5,
+     315.3,
+     1619.9
+    ]
+   },
+   "pipe_dim_standard": {
+    "value": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "bbox": [
+     95.9,
+     1623.4,
+     333.8,
+     1639.5
+    ]
+   },
+   "pipe_material_standard": {
+    "value": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "bbox": [
+     442.2,
+     1515.0,
+     610.5,
+     1531.2
+    ]
+   },
+   "connection_type": {
+    "value": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD.",
+    "bbox": [
+     442.2,
+     1534.8,
+     705.6,
+     1551.0
+    ]
+   }
+  },
+  "terminations": [
+   {
+    "name": "Pm",
+    "size": "1 1/2\" SAE6000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d848.3x7.14 (t)",
+    "table": "A",
+    "bbox": [
+     438.5,
+     1583.4,
+     614.4,
+     1589.7
+    ]
+   },
+   {
+    "name": "Tac",
+    "size": "G1 1/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d835x3 (t)",
+    "table": "A",
+    "bbox": [
+     438.2,
+     1593.4,
+     602.1,
+     1599.7
+    ]
+   },
+   {
+    "name": "Tm",
+    "size": "2\" SAE3000",
+    "connection": "Split Flange with Stub",
+    "tube_pipe": "\u00d860.3x3.91 (t)",
+    "table": "A",
+    "bbox": [
+     438.2,
+     1603.1,
+     614.4,
+     1609.5
+    ]
+   },
+   {
+    "name": "Wi, Wo",
+    "size": "DN50",
+    "connection": "SORF,ANSIB16.5,#150",
+    "tube_pipe": "\u00d860.3x3.91 (t)",
+    "table": "A",
+    "bbox": [
+     438.1,
+     1613.0,
+     614.4,
+     1619.4
+    ]
+   },
+   {
+    "name": "Lm",
+    "size": "G3/4\"",
+    "connection": "P.M.S.C.",
+    "tube_pipe": "\u00d822x3 (t)",
+    "table": "A",
+    "bbox": [
+     438.4,
+     1622.9,
+     602.1,
+     1629.2
+    ]
+   }
+  ],
+  "notes": [
+   {
+    "no": "1",
+    "text": "Manifold Material - GGG40. 17.11.2022 DRN 11.02.2022 DRN Kunde/Customer"
+   },
+   {
+    "no": "2",
+    "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct 03.01.2022 DRN SMS India Pvt. Ltd and JB to metal duct will be through flexible metal conduit. 07.12.2021 DRN"
+   }
+  ],
+  "warnings": [],
+  "text_height": 6.3,
+  "file": "SMS/01-PP02123-d-Hyd.Ckt (As Built).pdf",
+  "seconds": 0.1
+ }
+]

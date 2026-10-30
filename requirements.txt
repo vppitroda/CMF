@@ -1,0 +1,6 @@
+# POC ingestion deps (separate venv; do NOT install into gpu-env)
+pdfplumber>=0.11,<0.12
+pypdfium2>=4.30
+openpyxl>=3.1
+rapidfuzz>=3.9
+psycopg[binary]>=3.2

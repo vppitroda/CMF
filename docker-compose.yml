@@ -1,0 +1,42 @@
+# POC: Postgres + pgAdmin. API/UI/ingest run on the host.
+#   Start:  docker compose up -d
+#   pgAdmin: http://localhost:5050  (no login; the docsearch server is pre-registered,
+#            DB password is "docsearch")
+services:
+  db:
+    image: postgres:latest        # pin to a major version (e.g. postgres:17) once chosen
+    container_name: docsearch-db
+    environment:
+      POSTGRES_USER: docsearch
+      POSTGRES_PASSWORD: docsearch
+      POSTGRES_DB: docsearch
+    ports:
+      - "5432:5432"
+    volumes:
+      - docsearch-pg:/var/lib/postgresql   # PG18+ images expect this path; for PG17 and older use /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docsearch -d docsearch"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: docsearch-pgadmin
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"            # desktop mode: no login screen
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    ports:
+      - "5050:80"
+    volumes:
+      - ./pgadmin-servers.json:/pgadmin4/servers.json:ro
+      - docsearch-pgadmin:/var/lib/pgadmin
+
+volumes:
+  docsearch-pg:
+  docsearch-pgadmin:

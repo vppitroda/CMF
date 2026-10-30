@@ -1,0 +1,45 @@
+  0.1s  16/18 specs   7 ports  3 notes  ELECON/01-PP60056-0-Hyd.Ckt (WT+WC+WG).pdf
+  0.1s  16/18 specs   7 ports  2 notes  ELECON/01-PP60056-a-Hyd.Ckt (WT+WC+WG).pdf
+  0.1s  16/18 specs   7 ports  2 notes  ELECON/01-PP60056-b-Hyd.Ckt (WT+WC+WG).pdf
+  0.1s  16/18 specs   8 ports  2 notes  ELECON/01-PP60056-c-Hyd.Ckt (WT+WC+WG).pdf
+  0.1s  16/18 specs   8 ports  2 notes  ELECON/01-PP60056-d-Hyd.Ckt (WT+WC+WG).pdf
+  0.1s  16/18 specs   8 ports  2 notes  ELECON/01-PP60056-e-Hyd.Ckt (WT+WC+WG).pdf
+  0.1s  16/18 specs   7 ports  4 notes  ELECON/01-PP60057-0-Hyd.Ckt (SAC).pdf
+  0.1s  16/18 specs   7 ports  4 notes  ELECON/01-PP60057-a-Hyd.Ckt (SAC).pdf
+  0.1s  16/18 specs   7 ports  4 notes  ELECON/01-PP60057-b-Hyd.Ckt (SAC).pdf
+  0.1s  16/18 specs   8 ports  4 notes  ELECON/01-PP60057-c-Hyd.Ckt (SAC).pdf
+  0.1s  16/18 specs   8 ports  4 notes  ELECON/01-PP60057-d-Hyd.Ckt (SAC).pdf
+  0.1s  16/18 specs   8 ports  4 notes  ELECON/01-PP60057-e-Hyd.Ckt (SAC).pdf
+  0.1s  16/18 specs   9 ports  4 notes  ELECON/01-PP60058-0-Hyd.Ckt (E+T).pdf
+  0.1s  16/18 specs   9 ports  4 notes  ELECON/01-PP60058-a-Hyd.Ckt (E+T).pdf
+  0.1s  16/18 specs   9 ports  4 notes  ELECON/01-PP60058-b-Hyd.Ckt (E+T).pdf
+  0.1s  16/18 specs   9 ports  4 notes  ELECON/01-PP60058-c-Hyd.Ckt (E+T).pdf
+  0.1s  16/18 specs   9 ports  4 notes  ELECON/01-PP60058-d-Hyd.Ckt (E+T) - Copy.pdf
+  0.1s  16/18 specs   9 ports  4 notes  ELECON/01-PP60058-d-Hyd.Ckt (E+T).pdf
+  0.1s  16/18 specs   9 ports  4 notes  ELECON/01-PP60058-e-Hyd.Ckt (E+T).pdf
+  0.1s  15/18 specs   5 ports  2 notes  SMS/01-HV11452-c-Hyd.Ckt.pdf
+  0.1s  15/18 specs   9 ports  2 notes  SMS/01-HV11495-c-Hyd.Ckt.pdf
+  0.1s  15/18 specs   9 ports  2 notes  SMS/01-HV11495-d-Hyd.Ckt (As Built).pdf
+  0.1s  16/18 specs   5 ports  2 notes  SMS/01-PP02123-c-Hyd.Ckt.pdf
+  0.1s  16/18 specs   5 ports  2 notes  SMS/01-PP02123-d-Hyd.Ckt (As Built).pdf
+
+FIELD COVERAGE (non-empty / total)
+  customer_drawing_no           24/24
+  design_pressure               24/24
+  working_pressure              24/24
+  test_pressure                 24/24
+  working_fluid                 24/24
+  main_pump_flow                24/24
+  rec_pump_flow                 19/24
+  open_loop_flow                 5/24
+  solenoid_voltage              24/24
+  instrumentation_voltage       24/24
+  supply_voltage                24/24
+  tank_material                 21/24
+  piping_material               24/24
+  fittings_flanges_material     24/24
+  pipe_dim_standard             24/24
+  pipe_material_standard        24/24
+  connection_type               24/24
+with >=1 termination row: 24 / 24
+with warnings: []
