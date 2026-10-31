@@ -20,7 +20,11 @@ Search hydraulics BOMs / drawings by category -> spec property -> value -> neare
 
 ## Demo (start here)
 
-**Start everything** (Windows, Docker Desktop running, sample files in `D:\CMF\sample`):
+**One-click:** `start.bat` brings up Postgres, runs scan/extract/load (skips unchanged files), starts the API and UI, then opens
+http://localhost:4200. `stop.bat` stops the UI, API and containers (data is kept). Logs: `out\api.log`, `out\ui.log`.
+Set `DOCSEARCH_ROOT` first if the sample is not in `D:\CMF\sample`.
+
+**Start everything by hand** (Windows, Docker Desktop running, sample files in `D:\CMF\sample`):
 
     docker compose up -d                                   # Postgres + pgAdmin (http://localhost:5050)
     cd ingest ; $env:DOCSEARCH_ROOT = "D:\CMF\sample"
