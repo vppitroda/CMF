@@ -57,6 +57,18 @@ public class DocumentService(NpgsqlDataSource db, IOptions<DocsearchOptions> opt
 
     private class NoteRow { public string? No { get; set; } public string? Text { get; set; } public int? Page { get; set; } }
 
+    private class BomRow
+    {
+        public string? ItemNo { get; set; }
+        public string? PartNo { get; set; }
+        public string? Description { get; set; }
+        public string? Make { get; set; }
+        public string? Qty { get; set; }
+        public string? Remarks { get; set; }
+        public int? Page { get; set; }
+        public string? Bbox { get; set; }
+    }
+
     private class RevRow { public long Id { get; set; } public string FileName { get; set; } = ""; public string? Revision { get; set; } public bool IsLatest { get; set; } }
 
     public async Task<DocumentDetailDto> GetAsync(long id, CancellationToken ct)
@@ -79,6 +91,9 @@ public class DocumentService(NpgsqlDataSource db, IOptions<DocsearchOptions> opt
             new { id }, cancellationToken: ct));
         var notes = await conn.QueryAsync<NoteRow>(new CommandDefinition(
             "SELECT no, text, page FROM notes WHERE document_id = @id ORDER BY id", new { id }, cancellationToken: ct));
+        var bom = await conn.QueryAsync<BomRow>(new CommandDefinition(
+            "SELECT item_no, part_no, description, make, qty, remarks, page, bbox::text AS bbox FROM bom_lines WHERE document_id = @id ORDER BY id",
+            new { id }, cancellationToken: ct));
         var revs = await conn.QueryAsync<RevRow>(new CommandDefinition(
             @"SELECT id, file_name, revision, is_latest FROM documents
               WHERE family_key = @family AND duplicate_of IS NULL AND ext = @ext ORDER BY rev_rank, file_name",
@@ -92,6 +107,7 @@ public class DocumentService(NpgsqlDataSource db, IOptions<DocsearchOptions> opt
                 s.Extra is null ? null : JsonDocument.Parse(s.Extra).RootElement.Clone(), s.Page, SqlHelpers.ParseBbox(s.Bbox))).ToList(),
             terms.Select(t => new TerminationDto(t.Tbl, t.Name, t.Size, t.Connection, t.TubePipe, t.Page, SqlHelpers.ParseBbox(t.Bbox))).ToList(),
             notes.Select(n => new NoteDto(n.No, n.Text, n.Page)).ToList(),
+            bom.Select(b => new BomLineDto(b.ItemNo, b.PartNo, b.Description, b.Make, b.Qty, b.Remarks, b.Page, SqlHelpers.ParseBbox(b.Bbox))).ToList(),
             siblings[id].ToList(),
             revs.Select(r => new RevisionDto(r.Id, r.FileName, r.Revision, r.IsLatest)).ToList());
     }

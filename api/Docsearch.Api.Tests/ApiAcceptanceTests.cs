@@ -45,6 +45,51 @@ public class ApiAcceptanceTests(WebApplicationFactory<Program> factory) : IClass
     }
 
     [Fact]
+    public async Task AT2_bom_cylinder_has_its_title_properties()
+    {
+        var keys = (await GetJson("/api/categories/bom_cylinder/properties")).EnumerateArray()
+            .Select(p => p.GetProperty("key").GetString()).ToList();
+        Assert.Subset(keys.ToHashSet(), new HashSet<string?> { "bore_mm", "rod_mm", "stroke_mm", "make" });
+    }
+
+    [Fact]
+    public async Task AT3_bore_80_returns_the_80x56_cylinders_first_with_their_reuse_lists()
+    {
+        var r = await Results("category=bom_cylinder&property=bore_mm&value=80");
+        var top = r.Take(4).ToList();
+        Assert.All(top, x => Assert.Equal(0m, x.GetProperty("delta").GetDecimal()));
+        Assert.Equal(new[] { "HA90471", "HAS90264", "HAS90269", "HAS90545" },
+            top.Select(x => x.GetProperty("projectCode").GetString()).Order());
+        Assert.True(r[4].GetProperty("delta").GetDecimal() > 0);
+
+        string[] Reused(string code) => top.Single(x => x.GetProperty("projectCode").GetString() == code)
+            .GetProperty("reusedOn").EnumerateArray().Select(e => e.GetString()!).ToArray();
+        Assert.Equal(new[] { "PP60050", "PP60053", "PP60056" }, Reused("HAS90264"));   // "(PP60050 / 53 / 56)" expanded
+        Assert.Equal(new[] { "PP60052", "PP60055", "PP60058" }, Reused("HAS90545"));
+        Assert.Empty(Reused("HA90471"));                                               // its title carries no list
+    }
+
+    [Fact]
+    public async Task A_project_code_is_found_inside_a_reuse_list()
+    {
+        var r = await Results("category=bom_cylinder&property=reused_on&value=PP60056");
+        Assert.Equal(new[] { "HAS90264", "HAS90265", "HAS90266", "HAS90267", "HAS90543" },
+            r.Where(x => x.GetProperty("reusedOn").EnumerateArray().Any(e => e.GetString() == "PP60056"))
+             .Select(x => x.GetProperty("projectCode").GetString()).Order());
+    }
+
+    [Fact]
+    public async Task Bom_document_exposes_its_rows_with_page_and_bbox()
+    {
+        var hit = (await Results("category=bom_cylinder&property=bore_mm&value=160")).First();
+        var doc = await GetJson($"/api/documents/{hit.GetProperty("documentId").GetInt64()}");
+        var lines = doc.GetProperty("bomLines").EnumerateArray().ToList();
+        Assert.Equal(12, lines.Count);
+        Assert.Equal("121.00", lines[0].GetProperty("itemNo").GetString());
+        Assert.Equal(4, lines[0].GetProperty("bbox").GetArrayLength());
+    }
+
+    [Fact]
     public async Task AT5_include_old_shows_all_revisions_otherwise_only_latest()
     {
         var all = await Results($"{Dp}&value=250&includeOld=true&limit=100");

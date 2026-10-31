@@ -430,6 +430,7 @@ export interface DocumentDetailDto {
     specs: SpecDto[];
     terminations: TerminationDto[];
     notes: NoteDto[];
+    bomLines: BomLineDto[];
     siblings: SiblingDto[];
     revisions: RevisionDto[];
 }
@@ -460,6 +461,17 @@ export interface NoteDto {
     no?: string | undefined;
     text?: string | undefined;
     page?: number | undefined;
+}
+
+export interface BomLineDto {
+    itemNo?: string | undefined;
+    partNo?: string | undefined;
+    description?: string | undefined;
+    make?: string | undefined;
+    qty?: string | undefined;
+    remarks?: string | undefined;
+    page?: number | undefined;
+    bbox?: number[] | undefined;
 }
 
 export interface SiblingDto {
@@ -494,6 +506,7 @@ export interface SearchResultDto {
     page?: number | undefined;
     bbox?: number[] | undefined;
     siblings: SiblingDto[];
+    reusedOn: string[];
 }
 
 export enum SearchMode {

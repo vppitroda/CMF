@@ -60,12 +60,18 @@ def _view_mapper(page: "pdfium.PdfPage"):
     Handles CropBox offset and /Rotate (0/90/180/270). Many A0 sheets are stored portrait with
     /Rotate 270; without this their text lands off-page.
     """
-    try:
-        cl, cb, cr, ct = page.get_cropbox()
-    except Exception:
-        cl, cb, cr, ct = page.get_mediabox()
-    w, h = cr - cl, ct - cb
     rot = page.get_rotation() % 360
+    # pypdfium2 returns a Letter-sized (0,0,612,792) box when the page has no MediaBox/CropBox of its own,
+    # e.g. when it is inherited from the /Pages node (all the BOMs: A4 landscape, so every y came out 197 pt
+    # too low). fallback_ok=False tells us when that happens; then take the size pdfium itself computed.
+    box = page.get_cropbox(fallback_ok=False) or page.get_mediabox(fallback_ok=False)
+    if box is None:
+        dw, dh = page.get_size()                      # displayed size (rotation applied)
+        cl, cb = 0.0, 0.0
+        cr, ct = (dh, dw) if rot in (90, 270) else (dw, dh)
+    else:
+        cl, cb, cr, ct = box
+    w, h = cr - cl, ct - cb
 
     def f(l, b, r, t):
         x0, x1 = l - cl, r - cl          # unrotated, top-left origin

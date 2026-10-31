@@ -1,11 +1,25 @@
-import { expect, test } from '@playwright/test';
+import { expect, Page, test } from '@playwright/test';
+
+/** Text of the pdf.js text-layer spans that lie under the highlight overlay: proves it sits on the right words. */
+async function textUnderHighlight(page: Page): Promise<string> {
+  return page.evaluate(() => {
+    const hl = document.querySelector('.ds-highlight')!.getBoundingClientRect();
+    return [...document.querySelectorAll('.textLayer span')]
+      .filter((s) => {
+        const r = s.getBoundingClientRect();
+        return r.right > hl.left && r.left < hl.right && r.bottom > hl.top && r.top < hl.bottom;
+      })
+      .map((s) => s.textContent)
+      .join(' ');
+  });
+}
 
 // AT-1 (ordering) and AT-4 (viewer opens on the right page with the matched cell highlighted) in the browser.
 test('category -> property -> value -> nearest match -> viewer highlight', async ({ page }) => {
   await page.goto('/');
 
-  // 1 Category (auto-selected) and 2 Property
-  await expect(page.locator('#cat')).toContainText('Hydraulic circuit');
+  // 1 Category (the first one, Hydraulic circuit, is pre-selected) and 2 Property
+  await expect(page.locator('#cat')).toHaveValue('hyd_circuit');
   await page.locator('#prop').selectOption({ label: 'Design pressure' });
 
   // 3 Values actually found, with counts
@@ -38,6 +52,7 @@ test('category -> property -> value -> nearest match -> viewer highlight', async
   const box = await hl.boundingBox();
   expect(box!.width).toBeGreaterThan(5);
   await expect(hl).toBeInViewport({ ratio: 0.9 });                   // scrolled to the matched cell, not just present
+  await expect.poll(() => textUnderHighlight(page)).toContain('250/300');   // ...and it is on the value itself
   await expect(dialog.locator('li.match')).toContainText('250/300 Bar');   // matched spec flagged in the side panel
   await page.screenshot({ path: process.env['SHOT'] ?? 'e2e-viewer.png' });
 
@@ -46,4 +61,38 @@ test('category -> property -> value -> nearest match -> viewer highlight', async
   await page.locator('#val').fill('abc');
   await page.getByRole('button', { name: 'Go', exact: true }).click();
   await expect(page.getByRole('alert')).toContainText('is not a number');
+});
+
+// AT-3 in the browser: nearest cylinders by bore, with the reuse list, and the BOM table in the viewer.
+test('cylinder BOM: bore 80 -> the 80x56 cylinders with reused_on; BOM row highlight', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#cat').selectOption('bom_cylinder');
+  await expect(page.locator('#prop')).toContainText('Bore (mm)');
+  await page.locator('#prop').selectOption({ label: 'Bore (mm)' });
+  await expect(page.getByRole('button', { name: /^80 mm/ })).toContainText('· 4');
+
+  await page.getByRole('button', { name: /^80 mm/ }).click();
+  await expect(page.locator('#val')).toHaveValue('80');
+  await page.getByRole('button', { name: 'Go', exact: true }).click();
+
+  const rows = page.locator('.row-result');
+  for (const i of [0, 1, 2, 3]) await expect(rows.nth(i)).toContainText('Δ 0');
+  await expect(rows.nth(4)).not.toContainText('Δ 0');
+  const hit = rows.filter({ hasText: 'HAS90264' });
+  await expect(hit).toContainText('Reused on');
+  for (const code of ['PP60050', 'PP60053', 'PP60056']) await expect(hit.locator('.code', { hasText: code })).toBeVisible();
+  await expect(rows.filter({ hasText: 'HA90471' })).not.toContainText('Reused on');   // its title has no list
+
+  // viewer: highlight on the matched bore in the title block, then jump to a BOM row
+  await hit.locator('.name').click();
+  const dialog = page.locator('app-viewer-dialog');
+  const hl = dialog.locator('.ds-highlight');
+  await expect(hl).toBeInViewport({ ratio: 0.9, timeout: 60_000 });
+  const rowsInPanel = dialog.locator('.bom tbody tr');
+  await expect(rowsInPanel).toHaveCount(8);
+  await expect.poll(() => textUnderHighlight(page)).toContain('Platen Wheel Gripper');   // on the title block, at "Ø80 x 56"
+  await rowsInPanel.nth(5).click();                                                // 145.01~145.03, Minimess Test Coupling
+  await expect(dialog.locator('.bom tbody tr.match')).toHaveCount(1);
+  await expect.poll(() => textUnderHighlight(page)).toContain('2103-01-18.00');    // on that row in the PDF
+  if (process.env['SHOT_BOM']) await page.screenshot({ path: process.env['SHOT_BOM'] });
 });

@@ -12,7 +12,7 @@ public record SiblingDto(long Id, string FileName, string Kind);
 public record SearchResultDto(
     long DocumentId, string FileName, string RelPath, string? ProjectCode, string? Revision, bool IsLatest,
     string? Application, string MatchedValue, decimal? MatchedNumber, decimal? Delta, double? Similarity,
-    int? Page, double[]? Bbox, IReadOnlyList<SiblingDto> Siblings);
+    int? Page, double[]? Bbox, IReadOnlyList<SiblingDto> Siblings, IReadOnlyList<string> ReusedOn);
 
 public record SearchResponse(IReadOnlyList<SearchResultDto> Results);
 
@@ -24,6 +24,9 @@ public record TerminationDto(string? Table, string? Name, string? Size, string? 
 
 public record NoteDto(string? No, string? Text, int? Page);
 
+public record BomLineDto(
+    string? ItemNo, string? PartNo, string? Description, string? Make, string? Qty, string? Remarks, int? Page, double[]? Bbox);
+
 public record RevisionDto(long Id, string FileName, string? Revision, bool IsLatest);
 
 public record DocumentDetailDto(
@@ -31,7 +34,7 @@ public record DocumentDetailDto(
     string? ProjectCode, string? Revision, bool IsLatest, string? Application, int? PageCount,
     string ParseStatus, System.Text.Json.JsonElement ParseWarnings,
     IReadOnlyList<SpecDto> Specs, IReadOnlyList<TerminationDto> Terminations, IReadOnlyList<NoteDto> Notes,
-    IReadOnlyList<SiblingDto> Siblings, IReadOnlyList<RevisionDto> Revisions);
+    IReadOnlyList<BomLineDto> BomLines, IReadOnlyList<SiblingDto> Siblings, IReadOnlyList<RevisionDto> Revisions);
 
 public enum SearchMode { Near, Exact }
 

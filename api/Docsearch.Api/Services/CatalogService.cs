@@ -21,7 +21,8 @@ public class CatalogService(NpgsqlDataSource db) : ICatalogService
               WHERE d.is_latest AND d.duplicate_of IS NULL
                 AND d.category IN (SELECT DISTINCT category FROM properties)
               GROUP BY d.category ORDER BY d.category", cancellationToken: ct));
-        return rows.Select(r => new CategoryDto(r.Key, CategoryLabels.For(r.Key), r.DocCount)).ToList();
+        return rows.OrderBy(r => CategoryLabels.SortOrder(r.Key))
+                   .Select(r => new CategoryDto(r.Key, CategoryLabels.For(r.Key), r.DocCount)).ToList();
     }
 
     // Properties that exist for the category AND have data in at least one latest document.
@@ -60,7 +61,7 @@ public class CatalogService(NpgsqlDataSource db) : ICatalogService
               LEFT JOIN spec_numbers first ON first.field_id = f.id AND first.ord = 0
               WHERE d.category = @category AND f.prop_key = @property
                 AND d.is_latest AND d.duplicate_of IS NULL
-                AND (@canonQ::text IS NULL OR f.value_canon LIKE '%' || @canonQ || '%' OR similarity(f.value_canon, @canonQ) >= 0.3)
+                AND (@canonQ::text IS NULL OR strpos(f.value_canon, @canonQ) > 0 OR similarity(f.value_canon, @canonQ) >= 0.3)
               GROUP BY f.value_canon
               ORDER BY min(first.num) NULLS LAST, f.value_canon",
             new { category, property, canonQ }, cancellationToken: ct));

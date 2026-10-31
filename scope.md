@@ -160,6 +160,14 @@ uses "Open Loop Flow"). 186 port-table rows. ~0.1 s per drawing. Visually verifi
 9. Mixed fractions lose their space (`21/2"` → `2 1/2"`): repaired for port sizes/connections.
 10. Font sizes from pdfium are scaled and meaningless in absolute terms; use only relatively.
 11. The **port-table columns mean different things per template**: ELECON `size` = tube OD × wall and `connection` = SAE/G thread;
+12. **pypdfium2 reports a Letter box (0,0,612,792) when the page has no MediaBox/CropBox of its own** (inherited from the `/Pages`
+    node - all the A4 BOMs). Every y then came out 197 pt too low. `_view_mapper` now uses `get_*box(fallback_ok=False)` and falls
+    back to `page.get_size()`. Test against an independent oracle (pdfplumber word positions), not just "a highlight appears".
+13. **Do not apply the "drop small glyphs" filter to BOMs** (`page_chars(drop_small=False)`): text added in a later revision is stored
+    at a different font-size scale and was silently deleted (blank part no. + description on rev-a rows). Only the circuit
+    drawings' revision-marker letters need that filter.
+14. BOM item ranges come in several spellings: `002.01~002.02`, `023.03&023.04`, `063.01~63.02`; they wrap (`002.01~0` / `02.02`).
+    A BOM row starts on the line that carries a Qty; everything else is a continuation (see `bom.py`).
     SMS `size` = thread/flange, `connection` = flange type, `tube_pipe` = Ø × wall. Store as printed; normalise later.
 
 ### Each extracted value stores
@@ -430,10 +438,10 @@ xUnit for API endpoints, one Playwright smoke test for the four-step flow.
 |---|---|---|
 | M0 ✅ | Scaffold, compose (Postgres + pgAdmin), README | `docker compose up -d` works |
 | M1 ✅ | Circuit extractor + coverage report | 24/24 parse; `out/circuits.json` |
-| M2 | `db/001_init.sql`, `classify.py`, `scan`, `load` for circuits, `properties` seed | tables populated; AT-7 for circuits; pgAdmin shows data |
-| M3 | .NET API: categories / properties / values / search / document / file | AT-1, AT-5, AT-6 via curl/Swagger |
-| M4 | Angular four-step UI + results + PDF viewer with highlight | AT-1, AT-4 in the browser |
-| M5 | `bom.py`: cylinder title specs, `reused_on`, BOM rows (all `bom_*`) | AT-2, AT-3 |
+| M2 ✅ | `db/001_init.sql`, `classify.py`, `scan`, `load` for circuits, `properties` seed | tables populated; AT-7 for circuits; pgAdmin shows data |
+| M3 ✅ | .NET API: categories / properties / values / search / document / file | AT-1, AT-5, AT-6 via curl/Swagger |
+| M4 ✅ | Angular four-step UI + results + PDF viewer with highlight | AT-1, AT-4 in the browser |
+| M5 ✅ | `bom.py`: cylinder title specs, `reused_on`, BOM rows (all `bom_*`) | AT-2, AT-3 |
 | M6 | motor datasheet, JB cover, cylinder GA book, GA drawing investigation | properties appear in the UI |
 | M7 | canonicalisation polish, fuzzy text search endpoint + UI box | typo'd query finds the right doc |
 | M8 | golden set + accuracy report, README for the demo | accuracy numbers in `out/report.md` |

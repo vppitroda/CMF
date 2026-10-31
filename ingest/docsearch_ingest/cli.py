@@ -15,12 +15,15 @@ import pypdfium2 as pdfium
 from psycopg.types.json import Jsonb
 
 from . import aliases, db
-from .circuit import NUMERIC, extract_circuit
+from .bom import extract_bom
+from .circuit import extract_circuit
 from .classify import classify, is_junk, resolve
 from .props import PROPERTIES
 
-EXTRACTOR_VERSION = {"hyd_circuit": "circuit-1"}
-EXTRACTORS = {"hyd_circuit": extract_circuit}
+BOM_CATEGORIES = ("bom_system", "bom_cylinder", "bom_spares", "bom_valve_stand")
+EXTRACTOR_VERSION = {"hyd_circuit": "circuit-1", **{c: "bom-2" for c in BOM_CATEGORIES}}   # bom-2: page-box fix
+# category -> f(pdf_path, category) -> result dict
+EXTRACTORS = {"hyd_circuit": lambda path, cat: extract_circuit(path), **{c: extract_bom for c in BOM_CATEGORIES}}
 DEFAULT_OUT = Path(__file__).resolve().parents[2] / "out"
 DEFAULT_DSN = "postgresql://docsearch:docsearch@localhost:5432/docsearch"
 
@@ -106,14 +109,25 @@ def _cache_path(out: Path, sha: str) -> Path:
     return out / "extract" / f"{sha}.json"
 
 
+def _name_mismatches(payload: dict, code: str | None, rev: str | None) -> list[str]:
+    """Content is primary, the filename only a hint: log (never silently resolve) when they disagree.
+    A blank Rev cell means revision 0, so only a printed revision is compared."""
+    meta, out = payload.get("meta") or {}, []
+    if meta.get("part_no") and code and meta["part_no"] != code:
+        out.append(f"filename says {code} but the document says {meta['part_no']}")
+    if meta.get("rev") and rev and meta["rev"] != rev:
+        out.append(f"filename says rev {rev} but the document says rev {meta['rev']}")
+    return out
+
+
 def cmd_extract(conn, root: Path, out: Path, category: str | None, force: bool) -> None:
     cats = [category] if category else list(EXTRACTORS)
     with conn.cursor() as cur:
-        cur.execute("SELECT id, rel_path, sha256, category, extractor_version FROM documents "
+        cur.execute("SELECT id, rel_path, sha256, category, extractor_version, project_code, revision FROM documents "
                     "WHERE category = ANY(%s) AND duplicate_of IS NULL ORDER BY rel_path", (cats,))
         todo = cur.fetchall()
     done = skipped = 0
-    for doc_id, rel, sha, cat, ver in todo:
+    for doc_id, rel, sha, cat, ver, code, rev in todo:
         if cat not in EXTRACTORS:
             continue
         cache = _cache_path(out, sha)
@@ -122,12 +136,14 @@ def cmd_extract(conn, root: Path, out: Path, category: str | None, force: bool) 
             continue
         status, warnings, pages, payload = "ok", [], None, None
         try:
-            payload = EXTRACTORS[cat](str(root / rel))
-            warnings = list(payload.get("warnings", []))
+            payload = EXTRACTORS[cat](str(root / rel), cat)
+            warnings = list(payload.get("warnings", [])) + _name_mismatches(payload, code, rev)
+            payload["warnings"] = warnings
             pdf = pdfium.PdfDocument(str(root / rel))
             pages = len(pdf)
             pdf.close()
-            status = "failed" if not payload.get("specs") else "partial" if warnings else "ok"
+            empty = not payload.get("specs") and not payload.get("lines")
+            status = "failed" if empty else "partial" if warnings else "ok"
         except Exception as e:  # one bad document must not abort the run
             status, warnings = "failed", [f"EXCEPTION {type(e).__name__}: {e}"]
         if payload is not None:
@@ -146,25 +162,40 @@ def cmd_extract(conn, root: Path, out: Path, category: str | None, force: bool) 
 
 # --- load -----------------------------------------------------------------------------------------
 
-def _load_circuit(cur, doc_id: int, r: dict) -> None:
-    page = r.get("page")
-    for key, v in r["specs"].items():
+def _insert_specs(cur, doc_id: int, specs: dict, default_page: int | None) -> None:
+    for key, v in specs.items():
         if key == "project_name":      # deliberately not emitted (scope §5)
             continue
         text = aliases.ws(v["value"])
         _, remark = aliases.split_remark(text)
         extra = {k: v[k] for k in ("current", "frequency_hz") if v.get(k) is not None}
+        extra.update(v.get("extra") or {})
         if remark:
             extra["remark"] = remark
         cur.execute(
             "INSERT INTO spec_fields (document_id, prop_key, value_text, value_canon, unit, list_sep, extra, page, bbox) "
             "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id",
             (doc_id, key, text, aliases.canon(text), v.get("unit"), v.get("list_sep"),
-             Jsonb(extra) if extra else None, page, Jsonb(v["bbox"])))
+             Jsonb(extra) if extra else None, v.get("page", default_page), Jsonb(v["bbox"])))
         field_id = cur.fetchone()[0]
-        if key in NUMERIC:
-            for i, n in enumerate(v.get("numbers") or []):
-                cur.execute("INSERT INTO spec_numbers (field_id, ord, num) VALUES (%s,%s,%s)", (field_id, i, n))
+        for i, n in enumerate(v.get("numbers") or []):      # only numeric specs carry "numbers"
+            cur.execute("INSERT INTO spec_numbers (field_id, ord, num) VALUES (%s,%s,%s)", (field_id, i, n))
+
+
+def _load_bom(cur, doc_id: int, r: dict) -> None:
+    _insert_specs(cur, doc_id, r["specs"], r.get("page"))
+    for ln in r["lines"]:
+        cur.execute(
+            "INSERT INTO bom_lines (document_id, item_no, customer_item_no, rev, part_no, part_no_canon, description, "
+            "model_code, make, qty, remarks, page, bbox) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+            (doc_id, ln["item_no"], ln["customer_item_no"] or None, ln["rev"] or None, ln["part_no"] or None,
+             ln["part_no_canon"] or None, ln["description"] or None, ln["model_code"], ln["make"] or None,
+             ln["qty"] or None, ln["remarks"] or None, ln["page"], Jsonb(ln["bbox"])))
+
+
+def _load_circuit(cur, doc_id: int, r: dict) -> None:
+    page = r.get("page")
+    _insert_specs(cur, doc_id, r["specs"], page)
     for t in r["terminations"]:
         cur.execute("INSERT INTO terminations (document_id, tbl, name, size, connection, tube_pipe, page, bbox) "
                     "VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",
@@ -175,7 +206,29 @@ def _load_circuit(cur, doc_id: int, r: dict) -> None:
                     (doc_id, n.get("no"), n.get("text"), page))
 
 
-LOADERS = {"hyd_circuit": _load_circuit}
+LOADERS = {"hyd_circuit": _load_circuit, **{c: _load_bom for c in BOM_CATEGORIES}}
+
+
+def _sync_reused_on_links(conn) -> tuple[int, int]:
+    """doc_links 'reused_on': a cylinder / spares BOM -> the latest system BOM of each project it is listed for.
+    (Only projects whose system BOM is in the index get a link; the codes themselves stay in the spec field.)"""
+    with conn.cursor() as cur:
+        cur.execute("SELECT f.document_id, f.extra->'codes' FROM spec_fields f JOIN documents d ON d.id = f.document_id "
+                    "WHERE f.prop_key = 'reused_on' AND d.duplicate_of IS NULL")
+        wanted: set[tuple[int, int, str]] = set()
+        for doc_id, codes in cur.fetchall():
+            for code in codes or []:
+                cur.execute("SELECT id FROM documents WHERE category = 'bom_system' AND project_code = %s "
+                            "AND is_latest AND duplicate_of IS NULL", (code,))
+                wanted |= {(doc_id, row[0], "reused_on") for row in cur.fetchall()}
+        cur.execute("SELECT from_id, to_id, link_type FROM doc_links WHERE link_type = 'reused_on'")
+        have = set(cur.fetchall())
+        for f, t, lt in have - wanted:
+            cur.execute("DELETE FROM doc_links WHERE from_id=%s AND to_id=%s AND link_type=%s", (f, t, lt))
+        for f, t, lt in wanted - have:
+            cur.execute("INSERT INTO doc_links (from_id, to_id, link_type) VALUES (%s,%s,%s)", (f, t, lt))
+    conn.commit()
+    return len(wanted - have), len(have - wanted)
 
 
 def cmd_load(conn, out: Path, force: bool) -> None:
@@ -203,13 +256,14 @@ def cmd_load(conn, out: Path, force: bool) -> None:
             skipped += 1
             continue
         with conn.cursor() as cur:
-            for t in ("spec_fields", "terminations", "notes"):    # spec_numbers cascades from spec_fields
+            for t in ("spec_fields", "terminations", "notes", "bom_lines"):    # spec_numbers cascades from spec_fields
                 cur.execute(f"DELETE FROM {t} WHERE document_id = %s", (doc_id,))
             LOADERS[cat](cur, doc_id, json.loads(raw)["result"])
             cur.execute("UPDATE documents SET extract_hash = %s WHERE id = %s", (new_hash, doc_id))
         conn.commit()
         loaded += 1
-    print(f"load: {loaded} documents loaded, {skipped} unchanged")
+    added, removed = _sync_reused_on_links(conn)
+    print(f"load: {loaded} documents loaded, {skipped} unchanged | reused_on links +{added} -{removed}")
 
 
 # --- report ---------------------------------------------------------------------------------------

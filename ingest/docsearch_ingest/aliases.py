@@ -32,6 +32,13 @@ def split_remark(text: str) -> tuple[str, str | None]:
     return text[: m.start()].strip(), ws(m.group(1))
 
 
+def part_no_canon(text: str) -> str:
+    """Search key for part numbers: case/dashes/spaces/dots ignored, and the O/0 and I/1 mix-ups folded
+    (drawings and typed queries confuse them). Apply the same function to a typed query."""
+    s = re.sub(r"[^A-Z0-9]", "", text.upper())
+    return s.replace("O", "0").replace("I", "1")
+
+
 def canon(text: str) -> str:
     body, _ = split_remark(text)
     out = body.lower()

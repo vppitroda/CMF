@@ -59,6 +59,22 @@
           </ul>
         }
 
+        @if (d.bomLines.length) {
+          <h3>Bill of material ({{ d.bomLines.length }} lines)</h3>
+          <div class="bom">
+            <table>
+              <thead><tr><th>Item</th><th>Part no.</th><th>Description</th><th>Make</th><th>Qty</th></tr></thead>
+              <tbody>
+                @for (l of d.bomLines; track $index) {
+                  <tr [class.match]="isLine($index)" (click)="focusLine(l, $index)" title="Show on page {{ l.page }}">
+                    <td>{{ l.itemNo }}</td><td>{{ l.partNo }}</td><td>{{ l.description }}</td><td>{{ l.make }}</td><td>{{ l.qty }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        }
+
         @if (d.terminations.length) {
           <h3>Ports ({{ d.terminations.length }})</h3>
           <table>

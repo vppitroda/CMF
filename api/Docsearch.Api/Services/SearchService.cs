@@ -25,6 +25,8 @@ public class SearchService(NpgsqlDataSource db) : ISearchService
         public double? Similarity { get; set; }
     }
 
+    private class ReusedRow { public long DocumentId { get; set; } public string ValueText { get; set; } = ""; }
+
     private const string Select = @"SELECT d.id AS document_id, d.file_name, d.rel_path, d.project_code, d.revision,
         d.is_latest, d.application, f.value_text AS matched_value, f.page, f.bbox::text AS bbox";
 
@@ -60,25 +62,33 @@ public class SearchService(NpgsqlDataSource db) : ISearchService
         }
         else
         {
-            // exact value_canon match first, then pg_trgm similarity >= 0.3
+            // exact value_canon match first, then "contains" (a code inside a list), then pg_trgm similarity >= 0.3
             var canon = Canonicalizer.Canon(req.Value);
             rows = await conn.QueryAsync<ResultRow>(new CommandDefinition(
                 Select + @", similarity(f.value_canon, @canon)::float8 AS similarity
                   FROM documents d
                   JOIN spec_fields f ON f.document_id = d.id AND f.prop_key = @property
                   WHERE d.category = @category AND d.duplicate_of IS NULL AND (@includeOld OR d.is_latest)
-                    AND (f.value_canon = @canon OR (@exact = false AND similarity(f.value_canon, @canon) >= 0.3))
-                  ORDER BY (f.value_canon = @canon) DESC, similarity(f.value_canon, @canon) DESC, d.rev_rank DESC, d.file_name
+                    AND (f.value_canon = @canon
+                         OR (@exact = false AND (strpos(f.value_canon, @canon) > 0 OR similarity(f.value_canon, @canon) >= 0.3)))
+                  ORDER BY (f.value_canon = @canon) DESC, (strpos(f.value_canon, @canon) > 0) DESC,
+                           similarity(f.value_canon, @canon) DESC, d.rev_rank DESC, d.file_name
                   LIMIT @limit",
                 new { category = req.Category, property = req.Property, canon, includeOld = req.IncludeOld, exact, limit },
                 cancellationToken: ct));
         }
 
         var list = rows.ToList();
-        var siblings = await SqlHelpers.GetSiblingsAsync(conn, list.Select(r => r.DocumentId), ct);
+        var ids = list.Select(r => r.DocumentId).ToList();
+        var siblings = await SqlHelpers.GetSiblingsAsync(conn, ids, ct);
+        // reused_on is a text spec holding "PP60050, PP60053, PP60056": the strongest reuse signal, shown on each result
+        var reused = (await conn.QueryAsync<ReusedRow>(new CommandDefinition(
+            "SELECT document_id, value_text FROM spec_fields WHERE prop_key = 'reused_on' AND document_id = ANY(@ids)",
+            new { ids = ids.ToArray() }, cancellationToken: ct))).ToDictionary(r => r.DocumentId, r => r.ValueText);
         return new SearchResponse(list.Select(r => new SearchResultDto(
             r.DocumentId, r.FileName, r.RelPath, r.ProjectCode, r.Revision, r.IsLatest, r.Application,
             r.MatchedValue, r.MatchedNumber, r.Delta, r.Similarity, r.Page, SqlHelpers.ParseBbox(r.Bbox),
-            siblings[r.DocumentId].ToList())).ToList());
+            siblings[r.DocumentId].ToList(),
+            reused.TryGetValue(r.DocumentId, out var v) ? v.Split(", ", StringSplitOptions.RemoveEmptyEntries) : [])).ToList());
     }
 }

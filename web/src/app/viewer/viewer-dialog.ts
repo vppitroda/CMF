@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, input, output, signal } from '@angular/core';
 import { NgxExtendedPdfViewerModule, PageRenderedEvent } from 'ngx-extended-pdf-viewer';
 
-import { DocumentDetailDto, DocumentsClient, SpecDto } from '../api/api-client';
+import { BomLineDto, DocumentDetailDto, DocumentsClient, SpecDto } from '../api/api-client';
 import { environment } from '../../environments/environment';
 
 /** What to open: the document, and optionally the page + bbox of the matched value to highlight. */
@@ -68,11 +68,24 @@ export class ViewerDialog implements OnInit {
 
   /** Jump to an extracted value from the side panel. */
   protected focus(s: SpecDto): void {
-    if (!s.page || !s.bbox) return;
-    this.highlight.set({ page: s.page, bbox: s.bbox, key: s.key });
+    this.show(s.page, s.bbox, s.key);
+  }
+
+  /** Jump to a BOM row. */
+  protected focusLine(l: BomLineDto, index: number): void {
+    this.show(l.page, l.bbox, `line:${index}`);
+  }
+
+  private show(page: number | undefined, bbox: number[] | undefined, key: string): void {
+    if (!page || !bbox) return;
+    this.highlight.set({ page, bbox, key });
     this.requestScroll();
-    if (this.pageNo() !== s.page) this.pageNo.set(s.page);
-    else this.paint(s.page);
+    if (this.pageNo() !== page) this.pageNo.set(page);
+    else this.paint(page);
+  }
+
+  protected isLine(index: number): boolean {
+    return this.highlight()?.key === `line:${index}`;
   }
 
   protected onPageRendered(e: PageRenderedEvent): void {

@@ -76,6 +76,9 @@
               @if (r.isLatest) { <span class="tag">latest</span> } @else { <span class="tag old">older</span> }
               @if (r.application) { · {{ r.application }} }
             </div>
+            @if (r.reusedOn.length) {
+              <div class="reused">Reused on: @for (p of r.reusedOn; track p) { <span class="code">{{ p }}</span> }</div>
+            }
           </div>
           <div class="files">
             <button type="button" class="pill pdf" (click)="open(r)">PDF</button>

@@ -28,4 +28,16 @@ PROPERTIES: dict[str, list[tuple[str, str, str]]] = {
     "hyd_circuit": [
         (k, LABEL_TEXT[k], "number" if k in NUMERIC else "text") for k in LABELS if k != "project_name"
     ],
+    # BOM title block (bom.py). Numbers are mm / litres as printed.
+    "bom_cylinder": [
+        ("bore_mm", "Bore (mm)", "number"),
+        ("rod_mm", "Rod (mm)", "number"),
+        ("stroke_mm", "Stroke (mm)", "number"),
+        ("application", "Application", "text"),
+        ("options", "Options", "text"),
+        ("make", "Make", "text"),
+        ("reused_on", "Reused on (systems)", "text"),
+    ],
+    "bom_system": [("reservoir_litres", "Oil reservoir (litres)", "number")],
+    "bom_spares": [("reused_on", "For systems", "text")],
 }
