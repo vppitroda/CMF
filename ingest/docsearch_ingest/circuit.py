@@ -282,17 +282,25 @@ def extract_circuit(pdf_path: str, page_index: int = 0) -> dict:
             for r in ln:
                 if norm(r.text) == "terminationdetails":
                     term_title_y = r.y0
-        y_lim = (term_title_y - 2 * s) if term_title_y else H
+        # The notes block can run past the "Termination details" heading (5 notes on PP60058-c/d/e, 4 on the SMS drawings),
+        # so read down to the bottom of the spec box instead (found with tests/golden: notes 3-5 were being cut off).
+        box_bottom = max([b[3] for b in [v["bbox"] for v in out["specs"].values()]
+                          + [t["bbox"] for t in out["terminations"] if t.get("bbox")]] or [H])
+        y_lim = box_bottom + 3 * s
         cur = None
         for ln in lines:
-            for r in ln:
-                if r.x0 >= note_run.x0 - 3 and note_run.y1 - 1 <= r.y0 < y_lim and r is not note_run \
-                        and norm(r.text) != "":
-                    pass
             nr = [r for r in ln if r.x0 >= note_run.x0 - 3 * s and note_run.y1 - s <= r.yc < y_lim
                   and r is not note_run and r.text != ":"]
-            if not nr:
-                continue
+            if not nr or nr[0].x0 > note_run.x0 + 8 * mh:
+                continue      # a line that does not start at the notes' left edge belongs to the title block
+            # A note line is contiguous text. The title block (revision table: dates, initials, customer name) sits
+            # on the same lines further right and used to be glued on; stop at the first big horizontal gap.
+            kept = [nr[0]]
+            for r in nr[1:]:
+                if r.x0 - kept[-1].x1 > 6 * mh:
+                    break
+                kept.append(r)
+            nr = kept
             first = nr[0]
             txt = " ".join(r.text for r in nr)
             if re.fullmatch(r"\d+\.", first.text):

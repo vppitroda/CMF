@@ -447,7 +447,7 @@ xUnit for API endpoints, one Playwright smoke test for the four-step flow.
 | M5 ✅ | `bom.py`: cylinder title specs, `reused_on`, BOM rows (all `bom_*`) | AT-2, AT-3 |
 | M6 ✅ | motor datasheet, JB cover, cylinder GA book, GA drawing investigation | properties appear in the UI |
 | M7 ✅ | canonicalisation polish, fuzzy text search endpoint + UI box | typo'd query finds the right doc |
-| M8 | golden set + accuracy report, README for the demo | accuracy numbers in `out/report.md` |
+| M8 ✅ | golden set + accuracy report, README for the demo | accuracy numbers in `out/report.md` |
 
 Do M2→M4 first: a thin end-to-end vertical slice on circuits is the demo. Then widen with M5.
 

@@ -14,7 +14,7 @@ from pathlib import Path
 import pypdfium2 as pdfium
 from psycopg.types.json import Jsonb
 
-from . import aliases, db
+from . import aliases, db, golden
 from .bom import extract_bom
 from .circuit import extract_circuit
 from .cylbook import extract_cylbook
@@ -24,7 +24,7 @@ from .classify import classify, is_junk, resolve
 from .props import PROPERTIES
 
 BOM_CATEGORIES = ("bom_system", "bom_cylinder", "bom_spares", "bom_valve_stand")
-EXTRACTOR_VERSION = {"hyd_circuit": "circuit-1", **{c: "bom-2" for c in BOM_CATEGORIES},   # bom-2: page-box fix
+EXTRACTOR_VERSION = {"hyd_circuit": "circuit-2", **{c: "bom-2" for c in BOM_CATEGORIES},   # bom-2: page-box fix
                      "motor_datasheet": "motor-2", "jb_doc": "jb-1", "cylinder_ga_book": "cylbook-1"}
 # category -> f(pdf_path, category) -> result dict
 EXTRACTORS = {"hyd_circuit": lambda path, cat: extract_circuit(path), **{c: extract_bom for c in BOM_CATEGORIES},
@@ -301,7 +301,7 @@ def cmd_load(conn, out: Path, force: bool) -> None:
 
 # --- report ---------------------------------------------------------------------------------------
 
-def cmd_report(conn, out: Path) -> None:
+def cmd_report(conn, out: Path, root: Path | None = None) -> None:
     lines = ["# Docsearch extraction report", ""]
     with conn.cursor() as cur:
         cur.execute("SELECT category, count(*), count(*) FILTER (WHERE duplicate_of IS NOT NULL), "
@@ -312,6 +312,19 @@ def cmd_report(conn, out: Path) -> None:
                   "| category | files | duplicates | ok | partial | failed | skipped (not parsed) | pending |",
                   "|---|---|---|---|---|---|---|---|"]
         lines += [f"| {' | '.join(map(str, r))} |" for r in cur.fetchall()]
+
+        # scope §10: >= 95 % of the documents we try to parse must be parse_status=ok
+        cur.execute("SELECT category, count(*) FILTER (WHERE parse_status IN ('ok','partial','failed')), "
+                    "count(*) FILTER (WHERE parse_status='ok') FROM documents WHERE duplicate_of IS NULL "
+                    "AND category = ANY(%s) GROUP BY category ORDER BY category", (list(EXTRACTORS),))
+        lines += ["", "## Parse success (target: 95 % of parsed documents `ok`)", "",
+                  "`ok` means the extractor ran without warnings. It is NOT a correctness measure: only `hyd_circuit` is "
+                  "scored against ground truth (see the accuracy section). The other categories are covered by unit tests "
+                  "and spot checks, not by a golden set.", "",
+                  "| category | parsed | ok | rate | target |", "|---|---|---|---|---|"]
+        for cat, parsed, ok in cur.fetchall():
+            rate = 100 * ok / parsed if parsed else 0.0
+            lines.append(f"| {cat} | {parsed} | {ok} | {rate:.1f} % | {'met' if rate >= 95 else '**NOT MET**'} |")
         for cat, props in PROPERTIES.items():
             cur.execute("SELECT count(*) FROM documents WHERE category=%s AND duplicate_of IS NULL", (cat,))
             total = cur.fetchone()[0]
@@ -329,6 +342,10 @@ def cmd_report(conn, out: Path) -> None:
     lines += [f"- `{p}` **{s}** {json.dumps(w)}" for p, s, w in bad] or ["none"]
     lines += ["", "## Unclassified files", ""]
     lines += [f"- `{p}`" for _, p in unclassified] or ["none"]
+    if root is not None and golden.GOLDEN.exists():
+        lines += [""] + golden.markdown(golden.score_all(root))
+    else:
+        lines += ["", "## Accuracy against the golden set", "", "not run (pass --root / set DOCSEARCH_ROOT)"]
     out.mkdir(parents=True, exist_ok=True)
     (out / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"report: wrote {out / 'report.md'}")
@@ -359,7 +376,7 @@ def main(argv: list[str] | None = None) -> int:
         elif a.command == "load":
             cmd_load(conn, out, a.force)
         else:
-            cmd_report(conn, out)
+            cmd_report(conn, out, root)
     return 0
 
 

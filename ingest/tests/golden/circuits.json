@@ -1,0 +1,1998 @@
+{
+ "description": "Ground truth for hyd_circuit spec boxes: read by eye from rendered crops of each drawing, written BEFORE comparing with the extractor. See README.md in this folder for the method and its limits.",
+ "drawings": [
+  {
+   "file": "ELECON/01-PP60056-0-Hyd.Ckt (WT+WC+WG).pdf",
+   "sheet": "A0",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "250/300 Bar",
+    "working_pressure": "140/200/270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "580/126/650 lpm",
+    "rec_pump_flow": "NA",
+    "solenoid_voltage": "24V DC",
+    "instrumentation_voltage": "110V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P",
+     "size": "73 X 7.01",
+     "connection": "SAE 2 1/2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "T",
+     "size": "88.9 X 5.49",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "Y,C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "A1,B1",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "10X1.5",
+     "connection": "G 3/8\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,",
+     "size": "88.9 X 11.10",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "SMPS is used to convert 110V AC to 24VDC."
+    },
+    {
+     "no": "2",
+     "text": "Electric motor is suitable to overloaded by 60% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60056-a-Hyd.Ckt (WT+WC+WG).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "250/300 Bar",
+    "working_pressure": "140/200/270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "580/126/650 lpm",
+    "rec_pump_flow": "NA",
+    "solenoid_voltage": "220V AC",
+    "instrumentation_voltage": "220V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P",
+     "size": "73 X 7.01",
+     "connection": "SAE 2 1/2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "T",
+     "size": "88.9 X 5.49",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "Y,C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "A1,B1",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "10X1.5",
+     "connection": "G 3/8\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,",
+     "size": "88.9 X 11.10",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 60% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60056-b-Hyd.Ckt (WT+WC+WG).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "250/300 Bar",
+    "working_pressure": "140/200/270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "580/126/650 lpm",
+    "rec_pump_flow": "NA",
+    "solenoid_voltage": "220V AC",
+    "instrumentation_voltage": "220V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P",
+     "size": "73 X 7.01",
+     "connection": "SAE 2 1/2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "T",
+     "size": "88.9 X 5.49",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "Y,C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "A1,B1",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "10X1.5",
+     "connection": "G 3/8\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,",
+     "size": "88.9 X 11.10",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60056-c-Hyd.Ckt (WT+WC+WG).pdf",
+   "sheet": "A2",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "250/300 Bar",
+    "working_pressure": "140/200/270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "580/126/650 lpm",
+    "rec_pump_flow": "NA",
+    "solenoid_voltage": "220V AC",
+    "instrumentation_voltage": "220V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P",
+     "size": "73 X 7.01",
+     "connection": "SAE 2 1/2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "T",
+     "size": "88.9 X 5.49",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "Y,C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "A1,B1",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "16 X 2",
+     "connection": "G 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,",
+     "size": "88.9 X 11.10",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE"
+    },
+    {
+     "name": "L",
+     "size": "25 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60056-d-Hyd.Ckt (WT+WC+WG).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "250/300 Bar",
+    "working_pressure": "140/200/270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "580/126/650 lpm",
+    "rec_pump_flow": "NA",
+    "solenoid_voltage": "220V AC",
+    "instrumentation_voltage": "220V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P",
+     "size": "73 X 7.01",
+     "connection": "SAE 2 1/2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "T",
+     "size": "88.9 X 5.49",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "Y,C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "A1,B1",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "16 X 2",
+     "connection": "G 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,",
+     "size": "88.9 X 11.10",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE"
+    },
+    {
+     "name": "L",
+     "size": "25 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60056-e-Hyd.Ckt (WT+WC+WG).pdf",
+   "sheet": "A2",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "250/300 Bar",
+    "working_pressure": "140/200/270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "580/126/650 lpm",
+    "rec_pump_flow": "NA",
+    "solenoid_voltage": "220V AC",
+    "instrumentation_voltage": "220V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P",
+     "size": "73 X 7.01",
+     "connection": "SAE 2 1/2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "T",
+     "size": "88.9 X 5.49",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "Y,C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE(Weldable)"
+    },
+    {
+     "name": "A1,B1",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "16 X 2",
+     "connection": "G 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,",
+     "size": "88.9 X 11.10",
+     "connection": "SAE 3\"",
+     "tube_pipe": "PIPE"
+    },
+    {
+     "name": "L",
+     "size": "25 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 165% for 20 seconds in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60057-0-Hyd.Ckt (SAC).pdf",
+   "sheet": "A0",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "215+215 lpm",
+    "rec_pump_flow": "NA",
+    "solenoid_voltage": "24 V DC",
+    "instrumentation_voltage": "24 V DC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A6 to A9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "10 X 1.5",
+     "connection": "G 1/4\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "P1,L",
+     "size": "28 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE (Weldable)"
+    },
+    {
+     "name": "C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "B6 to B9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A5,B5",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 125% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60057-a-Hyd.Ckt (SAC).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "215+215 lpm",
+    "open_loop_flow": "105+105 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A6 to A9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "10 X 1.5",
+     "connection": "G 1/4\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "P1,L",
+     "size": "28 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE (Weldable)"
+    },
+    {
+     "name": "C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "B6 to B9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A5,B5",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 125% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60057-b-Hyd.Ckt (SAC).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "215+215 lpm",
+    "open_loop_flow": "105+105 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A6 to A9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "10 X 1.5",
+     "connection": "G 1/4\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "P1,L",
+     "size": "28 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE (Weldable)"
+    },
+    {
+     "name": "C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "B6 to B9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A5,B5",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60057-c-Hyd.Ckt (SAC).pdf",
+   "sheet": "A2",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "270 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "215+215 lpm",
+    "open_loop_flow": "105+105 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A6 to A9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "10 X 1.5",
+     "connection": "G 1/4\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "P1,L",
+     "size": "28 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE (Weldable)"
+    },
+    {
+     "name": "C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "B6 to B9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A5,B5",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "A1,B1,A2,B2",
+     "size": "48.3 X 7.14",
+     "connection": "SAE 1 1/2\",6000PSI",
+     "tube_pipe": "PIPE (Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60057-d-Hyd.Ckt (SAC).pdf",
+   "sheet": "A2",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "280 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "215+215 lpm",
+    "open_loop_flow": "105+105 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A6 to A9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "10 X 1.5",
+     "connection": "G 1/4\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "P1,L",
+     "size": "28 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE (Weldable)"
+    },
+    {
+     "name": "C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "B6 to B9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A5,B5",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "A1,B1,A2,B2",
+     "size": "48.3 X 7.14",
+     "connection": "SAE 1 1/2\",6000PSI",
+     "tube_pipe": "PIPE (Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60057-e-Hyd.Ckt (SAC).pdf",
+   "sheet": "A2",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "280 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "215+215 lpm",
+    "open_loop_flow": "105+105 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A6 to A9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "10 X 1.5",
+     "connection": "G 1/4\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "P1,L",
+     "size": "28 X 3",
+     "connection": "G 1\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "60.3 X 3.91",
+     "connection": "SAE 2\"",
+     "tube_pipe": "PIPE (Weldable)"
+    },
+    {
+     "name": "C",
+     "size": "42 X 3",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "B6 to B9",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE (Weldable)"
+    },
+    {
+     "name": "A5,B5",
+     "size": "38 X 5",
+     "connection": "G 1 1/2\"",
+     "tube_pipe": "TUBE(Weldable)"
+    },
+    {
+     "name": "A1,B1,A2,B2",
+     "size": "48.3 X 7.14",
+     "connection": "SAE 1 1/2\",6000PSI",
+     "tube_pipe": "PIPE (Weldable)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable to overloaded by 135% for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60058-0-Hyd.Ckt (E+T).pdf",
+   "sheet": "A0",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "230/250 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "490/125 lpm",
+    "rec_pump_flow": "90 lpm",
+    "solenoid_voltage": "24 V DC",
+    "instrumentation_voltage": "24 V DC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A1,B1",
+     "size": "2 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø73 x 9.52(t)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø38 x 5(t)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16 X 2(t)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3 X 3.91(t)"
+    },
+    {
+     "name": "L4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18 X 2(t)"
+    },
+    {
+     "name": "L5",
+     "size": "G 3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22 X 2(t)"
+    },
+    {
+     "name": "C",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø42 X 3(t)"
+    },
+    {
+     "name": "P1, P2",
+     "size": "G 1/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10 X 2(t)"
+    },
+    {
+     "name": "A5,B5,A6,B6",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3 X 7.14(t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable for 135% overload capacity for 20 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60058-a-Hyd.Ckt (E+T).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "230/250 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "490/125 lpm",
+    "rec_pump_flow": "94 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A1,B1",
+     "size": "2 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø73 x 9.52(t)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø38 x 5(t)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16 X 2(t)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3 X 3.91(t)"
+    },
+    {
+     "name": "L4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18 X 2(t)"
+    },
+    {
+     "name": "L5",
+     "size": "G 3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22 X 2(t)"
+    },
+    {
+     "name": "C",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø42 X 3(t)"
+    },
+    {
+     "name": "P1, P2",
+     "size": "G 1/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10 X 2(t)"
+    },
+    {
+     "name": "A5,B5,A6,B6",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3 X 7.14(t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable for 135% overload capacity for 20 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60058-b-Hyd.Ckt (E+T).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "230/250 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "490/125 lpm",
+    "rec_pump_flow": "87 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A1,B1",
+     "size": "2 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø73 x 9.52(t)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø38 x 5(t)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16 X 2(t)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3 X 3.91(t)"
+    },
+    {
+     "name": "L4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18 X 2(t)"
+    },
+    {
+     "name": "L5",
+     "size": "G 3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22 X 2(t)"
+    },
+    {
+     "name": "C",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø42 X 3(t)"
+    },
+    {
+     "name": "P1, P2",
+     "size": "G 1/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10 X 2(t)"
+    },
+    {
+     "name": "A5,B5,A6,B6",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3 X 7.14(t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60058-c-Hyd.Ckt (E+T).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "230/250 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "490/125 lpm",
+    "rec_pump_flow": "87 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A1,B1",
+     "size": "2 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø73 x 9.52(t)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø38 x 5(t)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16 X 2(t)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3 X 3.91(t)"
+    },
+    {
+     "name": "L4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18 X 2(t)"
+    },
+    {
+     "name": "L5",
+     "size": "G 3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22 X 2(t)"
+    },
+    {
+     "name": "C",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø42 X 3(t)"
+    },
+    {
+     "name": "P1, P2",
+     "size": "G 1/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10 X 2(t)"
+    },
+    {
+     "name": "A5,B5,A6,B6",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3 X 7.14(t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    },
+    {
+     "no": "5",
+     "text": "Accumulator 044.01 to be precharged to 80 bar in case of use of external brake for traverser hydro motor."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60058-d-Hyd.Ckt (E+T).pdf",
+   "sheet": "A2",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "230/250 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "490/125 lpm",
+    "rec_pump_flow": "87 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A1,B1",
+     "size": "2 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø73 x 9.52(t)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø38 x 5(t)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16 X 2(t)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3 X 3.91(t)"
+    },
+    {
+     "name": "L4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18 X 2(t)"
+    },
+    {
+     "name": "L5",
+     "size": "G 3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22 X 2(t)"
+    },
+    {
+     "name": "C",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø42 X 3(t)"
+    },
+    {
+     "name": "P1, P2",
+     "size": "G 1/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10 X 2(t)"
+    },
+    {
+     "name": "A5,B5,A6,B6",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3 X 7.14(t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    },
+    {
+     "no": "5",
+     "text": "Accumulator 044.01 to be precharged to 80 bar in case of use of external brake for traverser hydro motor."
+    }
+   ]
+  },
+  {
+   "file": "ELECON/01-PP60058-e-Hyd.Ckt (E+T).pdf",
+   "sheet": "A2",
+   "specs": {
+    "customer_drawing_no": "NA",
+    "design_pressure": "300 Bar",
+    "working_pressure": "255/265 Bar",
+    "test_pressure": "315 Bar ( By External Source )",
+    "working_fluid": "Minerial ISO VG68",
+    "main_pump_flow": "496/125 lpm",
+    "rec_pump_flow": "87 lpm",
+    "solenoid_voltage": "220 V AC",
+    "instrumentation_voltage": "220 V AC",
+    "supply_voltage": "415 +/-10% V AC, 50Hz +/-5%",
+    "tank_material": "IS 2062 Gr.A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ANSI B36.10M for Pipes Sizes above42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "A1,B1",
+     "size": "2 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø73 x 9.52(t)"
+    },
+    {
+     "name": "A2,B2",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø38 x 5(t)"
+    },
+    {
+     "name": "A3,B3,A4,B4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16 X 2(t)"
+    },
+    {
+     "name": "W1, W2",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3 X 3.91(t)"
+    },
+    {
+     "name": "L4",
+     "size": "G 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18 X 2(t)"
+    },
+    {
+     "name": "L5",
+     "size": "G 3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22 X 2(t)"
+    },
+    {
+     "name": "C",
+     "size": "G 1 1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø42 X 3(t)"
+    },
+    {
+     "name": "P1, P2",
+     "size": "G 1/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10 X 2(t)"
+    },
+    {
+     "name": "A5,B5,A6,B6",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3 X 7.14(t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Electric motor is suitable for 135% overload capacity for 15 second in every 144 sec. cycle."
+    },
+    {
+     "no": "2",
+     "text": "Interconnecting Piping between HPU & Actuators is not in HIPL scope of supply."
+    },
+    {
+     "no": "3",
+     "text": "End Termination shall be suitable for weldable connection."
+    },
+    {
+     "no": "4",
+     "text": "U port of each Close loop pump shall be connected externally to L-Leakage line to eliminate air trapped in pump housing."
+    },
+    {
+     "no": "5",
+     "text": "Accumulator 044.01 to be precharged to 80 bar in case of use of external brake for traverser hydro motor."
+    }
+   ]
+  },
+  {
+   "file": "SMS/01-HV11452-c-Hyd.Ckt.pdf",
+   "sheet": "A0",
+   "specs": {
+    "customer_drawing_no": "400827-0603644",
+    "design_pressure": "230 Bar",
+    "working_pressure": "190 Bar",
+    "test_pressure": "285 Bar ( By External Source )",
+    "working_fluid": "Mineral ISO VG46",
+    "main_pump_flow": "N.A.",
+    "rec_pump_flow": "-",
+    "solenoid_voltage": "24V DC",
+    "instrumentation_voltage": "24V DC",
+    "supply_voltage": "N.A.",
+    "piping_material": "CARBON STEEL",
+    "fittings_flanges_material": "CARBON STEEL",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "Pm",
+     "size": "G1\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø25x3(t)"
+    },
+    {
+     "name": "Tm",
+     "size": "G11/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø35x3(t)"
+    },
+    {
+     "name": "Lm",
+     "size": "G1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18x2(t)"
+    },
+    {
+     "name": "A1,A2,B1,B2",
+     "size": "G1\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø25x3(t)"
+    },
+    {
+     "name": "A3,B3",
+     "size": "G1\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø25x3(t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Manifold Material - GGG40."
+    },
+    {
+     "no": "2",
+     "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct and JB to metal duct will be through flexible metal conduit."
+    },
+    {
+     "no": "3",
+     "text": "Suitable cable gland will be provided at both ends of connecting cable."
+    },
+    {
+     "no": "4",
+     "text": "All solenoids will be wired up with oil resistance cable to junction box mounted on the valve desk."
+    }
+   ]
+  },
+  {
+   "file": "SMS/01-HV11495-c-Hyd.Ckt.pdf",
+   "sheet": "A0",
+   "specs": {
+    "customer_drawing_no": "400827-0603644",
+    "design_pressure": "230 Bar",
+    "working_pressure": "190 Bar",
+    "test_pressure": "285 Bar ( By External Source )",
+    "working_fluid": "Mineral ISO VG46",
+    "main_pump_flow": "N.A.",
+    "rec_pump_flow": "N.A.",
+    "solenoid_voltage": "24V DC",
+    "instrumentation_voltage": "24 VDC",
+    "supply_voltage": "N.A.",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P1,P2",
+     "size": "G1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16x2 (t)"
+    },
+    {
+     "name": "T1,T2",
+     "size": "G1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18x2 (t)"
+    },
+    {
+     "name": "P3",
+     "size": "G3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø20x2.5 (t)"
+    },
+    {
+     "name": "T3",
+     "size": "G1\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø28x3 (t)"
+    },
+    {
+     "name": "SDV X1~X2",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "RBV X1~X2",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "RCV X17~X20",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "PSDVX1~X4",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "PSDVX17~X20",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Manifold Material - GGG40."
+    },
+    {
+     "no": "2",
+     "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct and JB to metal duct will be through flexible metal conduit."
+    },
+    {
+     "no": "3",
+     "text": "Suitable cable gland will be provided at both ends of connecting cable."
+    },
+    {
+     "no": "4",
+     "text": "All solenoids will be wired up with oil resistance cable to junction box mounted on the valve desk."
+    }
+   ]
+  },
+  {
+   "file": "SMS/01-HV11495-d-Hyd.Ckt (As Built).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "400827-0603644",
+    "design_pressure": "230 Bar",
+    "working_pressure": "190 Bar",
+    "test_pressure": "285 Bar ( By External Source )",
+    "working_fluid": "Mineral ISO VG46",
+    "main_pump_flow": "N.A.",
+    "rec_pump_flow": "N.A.",
+    "solenoid_voltage": "24V DC",
+    "instrumentation_voltage": "24 VDC",
+    "supply_voltage": "N.A.",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "P1,P2",
+     "size": "G1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø16x2 (t)"
+    },
+    {
+     "name": "T1,T2",
+     "size": "G1/2\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø18x2 (t)"
+    },
+    {
+     "name": "P3",
+     "size": "G3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø20x2.5 (t)"
+    },
+    {
+     "name": "T3",
+     "size": "G1\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø28x3 (t)"
+    },
+    {
+     "name": "SDV X1~X2",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "RBV X1~X2",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "RCV X17~X20",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "PSDVX1~X4",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    },
+    {
+     "name": "PSDVX17~X20",
+     "size": "G3/8\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø10x2 (t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Manifold Material - GGG40."
+    },
+    {
+     "no": "2",
+     "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct and JB to metal duct will be through flexible metal conduit."
+    },
+    {
+     "no": "3",
+     "text": "Suitable cable gland will be provided at both ends of connecting cable."
+    },
+    {
+     "no": "4",
+     "text": "All solenoids will be wired up with oil resistance cable to junction box mounted on the valve desk."
+    }
+   ]
+  },
+  {
+   "file": "SMS/01-PP02123-c-Hyd.Ckt.pdf",
+   "sheet": "A0",
+   "specs": {
+    "customer_drawing_no": "400827-0603644",
+    "design_pressure": "230 Bar",
+    "working_pressure": "190 Bar",
+    "test_pressure": "285 Bar ( By External Source )",
+    "working_fluid": "Mineral ISO VG46",
+    "main_pump_flow": "250 lpm",
+    "rec_pump_flow": "~108 lpm",
+    "solenoid_voltage": "24V DC",
+    "instrumentation_voltage": "24 VDC",
+    "supply_voltage": "415V(+10%/-15%), 50Hz(+/-6%)",
+    "tank_material": "IS 2062 E250A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "Pm",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3x7.14 (t)"
+    },
+    {
+     "name": "Tac",
+     "size": "G11/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø35x3 (t)"
+    },
+    {
+     "name": "Tm",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3x3.91 (t)"
+    },
+    {
+     "name": "Wi, Wo",
+     "size": "DN50",
+     "connection": "SORF,ANSIB16.5,#150",
+     "tube_pipe": "Ø60.3x3.91 (t)"
+    },
+    {
+     "name": "Lm",
+     "size": "G3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22x3 (t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Manifold Material - GGG40."
+    },
+    {
+     "no": "2",
+     "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct and JB to metal duct will be through flexible metal conduit."
+    },
+    {
+     "no": "3",
+     "text": "Suitable cable gland will be provided at both ends of connecting cable."
+    },
+    {
+     "no": "4",
+     "text": "All solenoids will be wired up with oil resistance cable to junction box mounted on the valve desk."
+    }
+   ]
+  },
+  {
+   "file": "SMS/01-PP02123-d-Hyd.Ckt (As Built).pdf",
+   "sheet": "A1",
+   "specs": {
+    "customer_drawing_no": "400827-0603644",
+    "design_pressure": "230 Bar",
+    "working_pressure": "190 Bar",
+    "test_pressure": "285 Bar ( By External Source )",
+    "working_fluid": "Mineral ISO VG46",
+    "main_pump_flow": "250 lpm",
+    "rec_pump_flow": "~108 lpm",
+    "solenoid_voltage": "24V DC",
+    "instrumentation_voltage": "24 VDC",
+    "supply_voltage": "415V(+10%/-15%), 50Hz(+/-6%)",
+    "tank_material": "IS 2062 E250A",
+    "piping_material": "Carbon Steel",
+    "fittings_flanges_material": "Carbon Steel",
+    "pipe_dim_standard": "DIN EN 10305-4 for Tubes up to 42mm OD. ASME B36.10M for Pipes Sizes Above 42mm OD.",
+    "pipe_material_standard": "DIN EN 10305-4 for Tubes. ASTM A106 Gr B for Pipes.",
+    "connection_type": "Fitting with Wall form for internal Piping to be done up to 42mm OD. Flanges Connection in case of Pipe size above 42mm OD."
+   },
+   "terminations": [
+    {
+     "name": "Pm",
+     "size": "1 1/2\"SAE6000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø48.3x7.14 (t)"
+    },
+    {
+     "name": "Tac",
+     "size": "G11/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø35x3 (t)"
+    },
+    {
+     "name": "Tm",
+     "size": "2\"SAE3000",
+     "connection": "Split Flange with Stub",
+     "tube_pipe": "Ø60.3x3.91 (t)"
+    },
+    {
+     "name": "Wi, Wo",
+     "size": "DN50",
+     "connection": "SORF,ANSIB16.5,#150",
+     "tube_pipe": "Ø60.3x3.91 (t)"
+    },
+    {
+     "name": "Lm",
+     "size": "G3/4\"",
+     "connection": "P.M.S.C.",
+     "tube_pipe": "Ø22x3 (t)"
+    }
+   ],
+   "notes": [
+    {
+     "no": "1",
+     "text": "Manifold Material - GGG40."
+    },
+    {
+     "no": "2",
+     "text": "Cabling of Instrument to JB will be through metal conduit only. Cable from Instrument to metal duct and JB to metal duct will be through flexible metal conduit."
+    },
+    {
+     "no": "3",
+     "text": "Suitable cable gland will be provided at both ends of connecting cable."
+    },
+    {
+     "no": "4",
+     "text": "All solenoids will be wired up with oil resistance cable to junction box mounted on the valve desk."
+    }
+   ]
+  }
+ ]
+}
