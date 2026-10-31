@@ -1,0 +1,105 @@
+<div class="backdrop" (click)="closed.emit()"></div>
+<section class="dialog" role="dialog" aria-modal="true" [attr.aria-label]="target().fileName">
+  <header>
+    <h2>{{ detail()?.fileName ?? target().fileName }}</h2>
+    <button type="button" class="close" (click)="closed.emit()" aria-label="Close">✕</button>
+  </header>
+
+  <div class="body">
+    <div class="pdf">
+      @if (docId()) {
+        <ngx-extended-pdf-viewer
+          [src]="pdfUrl"
+          [(page)]="pageNo"
+          [(zoom)]="zoom"
+          [sidebarVisible]="false"
+          [showPageLabel]="false"
+          [height]="'100%'"
+          [textLayer]="true"
+          [showOpenFileButton]="false"
+          [showBookModeButton]="false"
+          [showPresentationModeButton]="false"
+          [showHandToolButton]="false"
+          [showSecondaryToolbarButton]="false"
+          [showPropertiesButton]="false"
+          [showRotateButton]="false"
+          [showScrollingButtons]="false"
+          [showSpreadButton]="false"
+          [showEditorButtons]="false"
+          [showSidebarButton]="false"
+          [showBorders]="false"
+          (pageRendered)="onPageRendered($event)"
+        />
+      }
+    </div>
+
+    <aside>
+      @if (error()) {
+        <p class="err">{{ error() }}</p>
+      }
+      @if (detail(); as d) {
+        <dl class="meta">
+          <dt>Project</dt><dd>{{ d.projectCode ?? '—' }}</dd>
+          <dt>Revision</dt><dd>{{ d.revision ?? '—' }} @if (d.isLatest) { <span class="tag">latest</span> }</dd>
+          @if (d.application) { <dt>Application</dt><dd>{{ d.application }}</dd> }
+          <dt>Parse</dt><dd>{{ d.parseStatus }}</dd>
+        </dl>
+
+        @if (d.specs.length) {
+          <h3>Extracted specifications</h3>
+          <ul class="specs">
+            @for (s of d.specs; track s.key) {
+              <li [class.match]="isMatch(s)">
+                <button type="button" (click)="focus(s)" [title]="'Show on page ' + s.page">
+                  <span class="k">{{ s.label }}</span>
+                  <span class="v">{{ s.value }}</span>
+                </button>
+              </li>
+            }
+          </ul>
+        }
+
+        @if (d.terminations.length) {
+          <h3>Ports ({{ d.terminations.length }})</h3>
+          <table>
+            <thead><tr><th>Port</th><th>Size</th><th>Connection</th><th>Tube / pipe</th></tr></thead>
+            <tbody>
+              @for (t of d.terminations; track $index) {
+                <tr><td>{{ t.name }}</td><td>{{ t.size }}</td><td>{{ t.connection }}</td><td>{{ t.tubePipe }}</td></tr>
+              }
+            </tbody>
+          </table>
+        }
+
+        @if (d.notes.length) {
+          <h3>Notes</h3>
+          <ol class="notes">
+            @for (n of d.notes; track $index) { <li>{{ n.text }}</li> }
+          </ol>
+        }
+
+        @if (d.siblings.length) {
+          <h3>Editable source (CAD)</h3>
+          <ul class="plain">
+            @for (s of d.siblings; track s.id) {
+              <li><a [href]="fileUrl(s.id)" download>{{ s.fileName }}</a> <span class="tag">{{ s.kind }}</span></li>
+            }
+          </ul>
+        }
+
+        @if (d.revisions.length > 1) {
+          <h3>Revisions</h3>
+          <ul class="revs">
+            @for (r of d.revisions; track r.id) {
+              <li>
+                <button type="button" [class.current]="r.id === d.id" (click)="open(r.id)">rev {{ r.revision }}</button>
+              </li>
+            }
+          </ul>
+        }
+      } @else if (!error()) {
+        <p class="muted">Loading…</p>
+      }
+    </aside>
+  </div>
+</section>

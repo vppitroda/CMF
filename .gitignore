@@ -13,3 +13,6 @@ api/**/obj/
 web/node_modules/
 web/dist/
 web/.angular/
+web/test-results/
+web/playwright-report/
+web/e2e-viewer.png

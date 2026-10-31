@@ -39,6 +39,17 @@ All commands are idempotent (a second run changes nothing). Tests: `pip install 
 Endpoints: `GET /api/categories`, `/api/categories/{cat}/properties`, `/api/categories/{cat}/properties/{prop}/values?q=`,
 `/api/search?category=&property=&value=&mode=near|exact&limit=&includeOld=`, `/api/documents/{id}`, `/api/documents/{id}/file`.
 
+## UI (M4)
+    cd web
+    npm install
+    npm start                       # http://localhost:4200 (needs the API on :5013)
+    npm run api-client              # regenerate src/app/api/api-client.ts with NSwag (API must be running;
+                                    #   set DOTNET_ROLL_FORWARD=Major if only the .NET 10 runtime is installed)
+    npx ng test --watch=false       # unit tests
+    npx playwright test             # four-step smoke test; starts the API and `npm start` itself if they are not running
+The pdf.js worker and viewer files are served from the app's own `/assets` (copied from `ngx-extended-pdf-viewer`), so there are
+no CDN calls. The API base URL is in `web/src/environments/environment.ts`.
+
 ## Run the circuit extractor (standalone)
     cd ingest
     python run_circuits.py <path-to-sample> ..\out

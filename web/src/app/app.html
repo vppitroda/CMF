@@ -1,0 +1,96 @@
+<header class="top">
+  <h1>Docsearch</h1>
+  <span class="sub">Find a reusable design instead of drawing it again</span>
+</header>
+
+<main>
+  <section class="steps" aria-label="Search">
+    <div class="step">
+      <label for="cat"><b>1</b> Category</label>
+      <select id="cat" [value]="category()" (change)="selectCategory($any($event.target).value)">
+        @for (c of categories(); track c.key) {
+          <option [value]="c.key" [selected]="c.key === category()">{{ c.label }} ({{ c.docCount }})</option>
+        }
+      </select>
+    </div>
+
+    <div class="step">
+      <label for="prop"><b>2</b> Property</label>
+      <select id="prop" [disabled]="!properties().length" (change)="selectProperty($any($event.target).value)">
+        <option value="" [selected]="!property()">Choose a property…</option>
+        @for (p of properties(); track p.key) {
+          <option [value]="p.key" [selected]="p.key === property()">{{ p.label }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="step wide">
+      <span class="lbl"><b>3</b> Values found in the documents</span>
+      <div class="chips">
+        @for (v of values(); track v.canon) {
+          <button type="button" class="chip" [class.on]="isPicked(v)" (click)="pick(v)">
+            {{ v.display }} <span class="n">· {{ v.docCount }}</span>
+          </button>
+        } @empty {
+          <span class="muted">{{ property() ? 'No values.' : 'Choose a property to see its values.' }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="step wide find">
+      <label for="val"><b>4</b> Search value</label>
+      <div class="row">
+        <input id="val" type="text" [attr.inputmode]="isNumeric() ? 'decimal' : 'text'" [value]="searchText()"
+               [disabled]="!property()" [placeholder]="isNumeric() ? 'e.g. 223' : 'type a value'"
+               (input)="onInput($event)" (keydown)="onKey($event)" />
+        <select aria-label="Match mode" (change)="mode.set($any($event.target).value)">
+          @for (m of modes; track m) { <option [value]="m" [selected]="m === mode()">{{ m }}</option> }
+        </select>
+        <label class="check"><input type="checkbox" [checked]="includeOld()" (change)="includeOld.set($any($event.target).checked)" /> Include old revisions</label>
+        <button type="button" class="go" [disabled]="!property() || !searchText().trim() || loading()" (click)="go()">
+          {{ loading() ? 'Searching…' : 'Go' }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  @if (error()) {
+    <p class="error" role="alert">{{ error() }}</p>
+  }
+
+  @if (results(); as rs) {
+    <section class="results" aria-live="polite">
+      <p class="count">{{ rs.length }} result{{ rs.length === 1 ? '' : 's' }}, nearest first</p>
+      @for (r of rs; track r.documentId) {
+        <article class="row-result">
+          <div class="match">
+            <div class="mv">{{ r.matchedValue }}</div>
+            <div class="delta">
+              @if (r.delta != null) { Δ {{ r.delta }} } @else { {{ similarityPct(r) }} }
+            </div>
+          </div>
+          <div class="doc">
+            <button type="button" class="name" (click)="open(r)" title="Open at the matched value">{{ r.fileName }}</button>
+            <div class="meta">
+              {{ r.projectCode }} · rev {{ r.revision }}
+              @if (r.isLatest) { <span class="tag">latest</span> } @else { <span class="tag old">older</span> }
+              @if (r.application) { · {{ r.application }} }
+            </div>
+          </div>
+          <div class="files">
+            <button type="button" class="pill pdf" (click)="open(r)">PDF</button>
+            @for (s of r.siblings; track s.id) {
+              <a class="pill" [href]="fileUrl(s.id)" download [title]="s.fileName">{{ s.kind.toUpperCase() }}</a>
+            }
+          </div>
+        </article>
+      } @empty {
+        <p class="muted">Nothing matched.</p>
+      }
+    </section>
+  }
+</main>
+
+@if (viewing(); as v) {
+  <app-viewer-dialog [target]="v" (closed)="viewing.set(null)" />
+}

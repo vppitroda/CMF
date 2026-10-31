@@ -25,7 +25,17 @@ builder.Services.AddControllers().AddJsonOptions(o =>
     o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));   // mode=near|exact
 builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler<ApiExceptionHandler>();
-builder.Services.AddOpenApiDocument(c => c.Title = "Docsearch API");          // NSwag generates the Angular client from this
+builder.Services.AddOpenApiDocument(c =>                                       // NSwag generates the Angular client from this
+{
+    c.Title = "Docsearch API";
+    // Non-nullable members are always present in responses: say so, so the generated TypeScript has no spurious "?".
+    c.PostProcess = doc =>
+    {
+        foreach (var schema in doc.Definitions.Values)
+            foreach (var prop in schema.Properties.Values)
+                if (!prop.IsNullable(NJsonSchema.SchemaType.OpenApi3)) prop.IsRequired = true;
+    };
+});
 builder.Services.AddCors(o => o.AddDefaultPolicy(p =>
     p.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()
      .WithExposedHeaders("Content-Range", "Accept-Ranges", "Content-Length")));
