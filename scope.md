@@ -326,6 +326,9 @@ lowercase; collapse whitespace; strip trailing remarks in parentheses; apply an 
 (`minerial` → `mineral`, `iso vg 68` → `iso vg68`); keep the original in `value_text`. Unknown values are kept, never dropped.
 The alias map lives in `ingest/docsearch_ingest/aliases.py` and is covered by tests.
 
+Canonicalisation rules live in `aliases.py` (`CANON_VERSION`) and are mirrored in `api/.../Canonicalizer.cs`; both sides share test
+cases. `load` folds `CANON_VERSION` into the extraction hash, so changing a rule re-canonicalises every document on the next load.
+
 ### Near-match rules
 - **Numeric property:** `delta = MIN(ABS(num - target))` over the field's numbers (any value in `250/300` may match);
   rank by `delta`, then latest revision first. Return the matched number so the UI can show *which* value matched.
@@ -443,7 +446,7 @@ xUnit for API endpoints, one Playwright smoke test for the four-step flow.
 | M4 ✅ | Angular four-step UI + results + PDF viewer with highlight | AT-1, AT-4 in the browser |
 | M5 ✅ | `bom.py`: cylinder title specs, `reused_on`, BOM rows (all `bom_*`) | AT-2, AT-3 |
 | M6 ✅ | motor datasheet, JB cover, cylinder GA book, GA drawing investigation | properties appear in the UI |
-| M7 | canonicalisation polish, fuzzy text search endpoint + UI box | typo'd query finds the right doc |
+| M7 ✅ | canonicalisation polish, fuzzy text search endpoint + UI box | typo'd query finds the right doc |
 | M8 | golden set + accuracy report, README for the demo | accuracy numbers in `out/report.md` |
 
 Do M2→M4 first: a thin end-to-end vertical slice on circuits is the demo. Then widen with M5.

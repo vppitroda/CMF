@@ -1,7 +1,7 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
-import { API_BASE_URL, CategoriesClient, DocumentsClient, SearchClient } from './api/api-client';
+import { API_BASE_URL, CategoriesClient, DocumentsClient, SearchClient, TextSearchClient } from './api/api-client';
 import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
@@ -13,6 +13,7 @@ export const appConfig: ApplicationConfig = {
     // NSwag-generated clients (npm run api-client)
     CategoriesClient,
     SearchClient,
+    TextSearchClient,
     DocumentsClient,
   ],
 };

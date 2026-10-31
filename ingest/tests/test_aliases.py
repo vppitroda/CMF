@@ -11,6 +11,11 @@ from docsearch_ingest.aliases import canon, split_remark, ws
     ("250/300  Bar", "250/300 bar"),
     ("NA", "na"), ("N.A.", "na"), ("-", "na"),
     ("IS 2062 Gr.A", "is 2062 gr.a"),                   # unknown values are kept as-is (lowercased)
+    ("Mineral ISO VG-68", "mineral iso vg68"),
+    ("230Bar", "230 bar"), ("230  bar", "230 bar"), ("105+105lpm", "105+105 lpm"),
+    ("250 / 300 Bar", "250/300 bar"), ("215 + 215 lpm", "215+215 lpm"),
+    ("N/A", "na"), ("n.a", "na"), ("NA", "na"),
+    ("415 +/-10% V AC, 50Hz", "415 +/-10% v ac, 50 hz"),  # "+/-" is not a list separator
 ])
 def test_canon(raw, expected):
     assert canon(raw) == expected

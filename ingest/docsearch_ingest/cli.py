@@ -284,7 +284,7 @@ def cmd_load(conn, out: Path, force: bool) -> None:
         if not cache.exists():
             continue
         raw = cache.read_text(encoding="utf-8")
-        new_hash = hashlib.sha256(raw.encode()).hexdigest()
+        new_hash = hashlib.sha256((raw + "|canon" + aliases.CANON_VERSION).encode()).hexdigest()   # rules changed -> reload
         if not force and new_hash == old_hash:
             skipped += 1
             continue

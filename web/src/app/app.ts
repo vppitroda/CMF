@@ -1,7 +1,8 @@
 import { Component, OnInit, computed, inject, signal } from '@angular/core';
 
 import {
-  CategoriesClient, CategoryDto, PropertyDto, SearchClient, SearchMode, SearchResultDto, ValueDto,
+  CategoriesClient, CategoryDto, MatchKind, PropertyDto, SearchClient, SearchMode, SearchResultDto, TextSearchClient,
+  TextSearchResultDto, ValueDto,
 } from './api/api-client';
 import { environment } from '../environments/environment';
 import { fillValue, problemMessage } from './fill-value';
@@ -16,6 +17,7 @@ import { ViewerDialog, ViewerTarget } from './viewer/viewer-dialog';
 export class App implements OnInit {
   private readonly categoriesApi = inject(CategoriesClient);
   private readonly searchApi = inject(SearchClient);
+  private readonly textApi = inject(TextSearchClient);
 
   protected readonly categories = signal<CategoryDto[]>([]);
   protected readonly properties = signal<PropertyDto[]>([]);
@@ -31,6 +33,20 @@ export class App implements OnInit {
   protected readonly loading = signal(false);
   protected readonly error = signal('');
   protected readonly viewing = signal<ViewerTarget | null>(null);
+
+  // free-text search (M7)
+  protected readonly view = signal<'filters' | 'text'>('filters');
+  protected readonly tq = signal('');
+  protected readonly tCategory = signal('');
+  protected readonly tIncludeOld = signal(false);
+  protected readonly tResults = signal<TextSearchResultDto[] | null>(null);
+  protected readonly tLoading = signal(false);
+  protected readonly kindLabel: Record<MatchKind, string> = {
+    [MatchKind.PartNo]: 'Part no.', [MatchKind.BomLine]: 'BOM line', [MatchKind.Spec]: 'Spec value',
+    [MatchKind.Note]: 'Note', [MatchKind.FileName]: 'File name',
+  };
+  /** Categories for the text-search scope: the filterable ones plus CAD (found by file name only). */
+  protected readonly textCategories = computed(() => [...this.categories(), { key: 'cad', label: 'CAD files', docCount: 0 }]);
 
   protected readonly modes = [SearchMode.Near, SearchMode.Exact];
   protected readonly propertyInfo = computed(() => this.properties().find((p) => p.key === this.property()));
@@ -122,5 +138,53 @@ export class App implements OnInit {
 
   protected onKey(e: KeyboardEvent): void {
     if (e.key === 'Enter') this.go();
+  }
+
+  // --- free-text search --------------------------------------------------------------------------
+
+  protected setView(v: 'filters' | 'text'): void {
+    this.view.set(v);
+    this.error.set('');
+  }
+
+  protected goText(): void {
+    const q = this.tq().trim();
+    if (q.length < 3) {
+      this.error.set('Type at least 3 characters.');
+      return;
+    }
+    this.tLoading.set(true);
+    this.error.set('');
+    this.textApi.search(q, this.tCategory() || undefined, 20, this.tIncludeOld()).subscribe({
+      next: (r) => {
+        this.tResults.set(r.results);
+        this.tLoading.set(false);
+      },
+      error: (e) => {
+        this.tResults.set(null);
+        this.error.set(problemMessage(e));
+        this.tLoading.set(false);
+      },
+    });
+  }
+
+  protected openText(r: TextSearchResultDto): void {
+    this.viewing.set({ documentId: r.documentId, fileName: r.fileName, page: r.page, bbox: r.bbox, matchedKey: r.matchedKey });
+  }
+
+  protected isPdf(r: { relPath: string }): boolean {
+    return r.relPath.toLowerCase().endsWith('.pdf');
+  }
+
+  protected scorePct(r: TextSearchResultDto): string {
+    return `${Math.round(r.score * 100)}%`;
+  }
+
+  protected onTextInput(e: Event): void {
+    this.tq.set((e.target as HTMLInputElement).value);
+  }
+
+  protected onTextKey(e: KeyboardEvent): void {
+    if (e.key === 'Enter') this.goText();
   }
 }

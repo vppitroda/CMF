@@ -19,3 +19,9 @@ public interface IDocumentService
     Task<DocumentDetailDto> GetAsync(long id, CancellationToken ct);
     Task<DocumentFile> GetFileAsync(long id, CancellationToken ct);
 }
+
+/// <summary>Fuzzy keyword search over spec values, BOM rows (part no., description), notes and file names.</summary>
+public interface ITextSearchService
+{
+    Task<TextSearchResponse> SearchAsync(TextSearchRequest request, CancellationToken ct);
+}

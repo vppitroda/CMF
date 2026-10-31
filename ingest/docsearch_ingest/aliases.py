@@ -7,11 +7,18 @@ from __future__ import annotations
 
 import re
 
+# Bump when ALIASES / canon() change: load folds it into the extraction hash, so every document is
+# re-canonicalised on the next `load` even though its extraction did not change. Keep Canonicalizer.cs in step.
+CANON_VERSION = "2"
+
 # (pattern, replacement) applied in order to the lowercased text
 ALIASES: list[tuple[re.Pattern, str]] = [
-    (re.compile(r"\bminerial\b"), "mineral"),
-    (re.compile(r"\biso vg\s*(\d+)"), r"iso vg\1"),
-    (re.compile(r"^(?:n\.?\s?a\.?|-+|nil)$"), "na"),        # NA / N.A. / - all mean "not applicable"
+    (re.compile(r"\bminerial\b"), "mineral"),                         # typo found in the sample
+    (re.compile(r"\biso vg[\s-]*(\d+)"), r"iso vg\1"),                # ISO VG 68 / ISO VG-68 / ISO VG68
+    (re.compile(r"(\d)\s*(bar|lpm|kw|rpm|ltrs?|mm|hz)\b"), r"\1 \2"),  # 230Bar -> 230 bar
+    (re.compile(r"(?<=\d)\s*/\s*(?=\d)"), "/"),                       # 250 / 300 -> 250/300
+    (re.compile(r"(?<=\d)\s*\+\s*(?=\d)"), "+"),                      # 215 + 215 -> 215+215
+    (re.compile(r"^(?:n[./\s]?a\.?|-+|nil)$"), "na"),                 # NA / N.A. / N/A / - : "not applicable"
 ]
 
 _WS = re.compile(r"\s+")

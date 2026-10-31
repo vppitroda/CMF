@@ -127,3 +127,44 @@ test('motor datasheet and JB cover: nearest value, highlight on the printed cell
   await expect.poll(() => textUnderHighlight(page)).toContain('Enclosures');
   if (process.env['SHOT_JB']) await page.screenshot({ path: process.env['SHOT_JB'] });
 });
+
+// M7: free-text search tolerates typos; the viewer opens on the matched BOM row; CAD parts are found by file name.
+test('free-text search: typo finds the BOM row, part number with letter O, CAD by file name', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('tab', { name: 'Free-text search' }).click();
+  const go = page.getByRole('button', { name: 'Search', exact: true });
+  const rows = page.locator('.row-result');
+
+  await expect(go).toBeDisabled();                                   // needs 3+ characters
+  await page.locator('#tq').fill('presure relef valve');             // two typos
+  await go.click();
+  await expect(rows.first()).toContainText('BOM line');
+  await expect(rows.first().locator('.snippet')).toContainText('Pressure Relief Valve');
+  await expect(rows.first()).toContainText('more in this document');
+
+  await rows.first().locator('.name').click();
+  const dialog = page.locator('app-viewer-dialog');
+  await expect(dialog.locator('.ds-highlight')).toBeInViewport({ ratio: 0.9, timeout: 60_000 });
+  await expect.poll(() => textUnderHighlight(page)).toContain('Pressure Relief Valve');
+  await expect(dialog.locator('.bom tbody tr.match')).toHaveCount(1);   // the matched row is flagged in the parts list...
+  await expect(dialog.locator('.bom tbody tr.match')).toBeInViewport();  // ...and scrolled into view in a 92-row list
+  if (process.env['SHOT_TEXT']) await page.screenshot({ path: process.env['SHOT_TEXT'] });
+  await dialog.getByRole('button', { name: 'Close' }).click();
+
+  await page.locator('#tq').fill('TPN0O041');                        // letter O for the digit 0
+  await go.click();
+  await expect(rows.first()).toContainText('Part no.');
+  await expect(rows.first().locator('.snippet')).toContainText('TPN00041');
+  await expect(rows.first()).toContainText('100% match');
+
+  await page.locator('#tq').fill('4we6');
+  await page.locator('select[aria-label="Limit to category"]').selectOption('cad');
+  await go.click();
+  await expect(rows.first()).toContainText('4WE6');
+  await expect(rows.first().locator('a.pill', { hasText: 'Download' })).toBeVisible();   // SolidWorks part: not a PDF
+  await expect(rows.first().locator('button.pill.pdf')).toHaveCount(0);
+
+  await page.locator('#tq').fill('zzqxjkw');
+  await go.click();
+  await expect(page.getByText('Nothing matched.')).toBeVisible();
+});

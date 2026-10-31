@@ -43,3 +43,16 @@ public record SearchRequest(string Category, string Property, string Value, Sear
 
 /// <summary>A file resolved inside DOCSEARCH_ROOT (never exposed to clients as a path).</summary>
 public record DocumentFile(string PhysicalPath, string ContentType);
+
+/// <summary>Where a free-text hit was found.</summary>
+public enum MatchKind { PartNo, BomLine, Spec, Note, FileName }
+
+public record TextSearchRequest(string Q, string? Category, int Limit = 20, bool IncludeOld = false);
+
+/// <summary>One document's best free-text match (a part number, BOM line, spec value, note or the file name).</summary>
+public record TextSearchResultDto(
+    long DocumentId, string FileName, string RelPath, string Category, string CategoryLabel, string? ProjectCode,
+    string? Revision, bool IsLatest, string? Application, MatchKind MatchKind, string MatchLabel, string MatchedText,
+    double Score, int MatchCount, string? MatchedKey, int? Page, double[]? Bbox, IReadOnlyList<SiblingDto> Siblings);
+
+public record TextSearchResponse(IReadOnlyList<TextSearchResultDto> Results);

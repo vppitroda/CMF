@@ -4,6 +4,12 @@
 </header>
 
 <main>
+  <nav class="tabs" role="tablist" aria-label="Search type">
+    <button type="button" role="tab" id="tab-filters" [attr.aria-selected]="view() === 'filters'" [class.on]="view() === 'filters'" (click)="setView('filters')">Filter by property</button>
+    <button type="button" role="tab" id="tab-text" [attr.aria-selected]="view() === 'text'" [class.on]="view() === 'text'" (click)="setView('text')">Free-text search</button>
+  </nav>
+
+  @if (view() === 'filters') {
   <section class="steps" aria-label="Search">
     <div class="step">
       <label for="cat"><b>1</b> Category</label>
@@ -53,11 +59,31 @@
       </div>
     </div>
   </section>
+  } @else {
+  <section class="steps text" aria-label="Free-text search">
+    <div class="step wide find">
+      <label for="tq">Search part numbers, BOM descriptions, spec values, notes and file names (typos are fine)</label>
+      <div class="row">
+        <input id="tq" type="text" [value]="tq()" placeholder="e.g. presure relef valve, TPN00041, 4WE6, hot oil shuttle"
+               (input)="onTextInput($event)" (keydown)="onTextKey($event)" />
+        <select aria-label="Limit to category" (change)="tCategory.set($any($event.target).value)">
+          <option value="" [selected]="!tCategory()">All categories</option>
+          @for (c of textCategories(); track c.key) { <option [value]="c.key" [selected]="c.key === tCategory()">{{ c.label }}</option> }
+        </select>
+        <label class="check"><input type="checkbox" [checked]="tIncludeOld()" (change)="tIncludeOld.set($any($event.target).checked)" /> Include old revisions</label>
+        <button type="button" class="go" [disabled]="tq().trim().length < 3 || tLoading()" (click)="goText()">
+          {{ tLoading() ? 'Searching…' : 'Search' }}
+        </button>
+      </div>
+    </div>
+  </section>
+  }
 
   @if (error()) {
     <p class="error" role="alert">{{ error() }}</p>
   }
 
+  @if (view() === 'filters') {
   @if (results(); as rs) {
     <section class="results" aria-live="polite">
       <p class="count">{{ rs.length }} result{{ rs.length === 1 ? '' : 's' }}, nearest first</p>
@@ -91,6 +117,44 @@
         <p class="muted">Nothing matched.</p>
       }
     </section>
+  }
+  } @else {
+  @if (tResults(); as ts) {
+    <section class="results" aria-live="polite">
+      <p class="count">{{ ts.length }} document{{ ts.length === 1 ? '' : 's' }}, best match first</p>
+      @for (r of ts; track r.documentId) {
+        <article class="row-result text-result">
+          <div class="match">
+            <div class="kind">{{ kindLabel[r.matchKind] }}</div>
+            <div class="delta">{{ scorePct(r) }} match</div>
+          </div>
+          <div class="doc">
+            @if (isPdf(r)) {
+              <button type="button" class="name" (click)="openText(r)" title="Open at the match">{{ r.fileName }}</button>
+            } @else {
+              <a class="name" [href]="fileUrl(r.documentId)" download>{{ r.fileName }}</a>
+            }
+            <div class="meta">
+              {{ r.categoryLabel }}@if (r.projectCode) { · {{ r.projectCode }} }@if (r.revision) { · rev {{ r.revision }} }
+              @if (r.isLatest) { <span class="tag">latest</span> } @else { <span class="tag old">older</span> }
+            </div>
+            <div class="snippet"><span class="lab">{{ r.matchLabel }}:</span> {{ r.matchedText }}
+              @if (r.matchCount > 1) { <span class="more">+{{ r.matchCount - 1 }} more in this document</span> }
+            </div>
+          </div>
+          <div class="files">
+            @if (isPdf(r)) { <button type="button" class="pill pdf" (click)="openText(r)">PDF</button> }
+            @else { <a class="pill" [href]="fileUrl(r.documentId)" download>Download</a> }
+            @for (s of r.siblings; track s.id) {
+              <a class="pill" [href]="fileUrl(s.id)" download [title]="s.fileName">{{ s.kind.toUpperCase() }}</a>
+            }
+          </div>
+        </article>
+      } @empty {
+        <p class="muted">Nothing matched.</p>
+      }
+    </section>
+  }
   }
 </main>
 

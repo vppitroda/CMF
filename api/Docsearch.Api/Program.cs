@@ -20,6 +20,7 @@ builder.Services.AddSingleton(NpgsqlDataSource.Create(ConnectionStrings.ToNpgsql
 builder.Services.AddScoped<ICatalogService, CatalogService>();
 builder.Services.AddScoped<ISearchService, SearchService>();
 builder.Services.AddScoped<IDocumentService, DocumentService>();
+builder.Services.AddScoped<ITextSearchService, TextSearchService>();
 
 builder.Services.AddControllers().AddJsonOptions(o =>
     o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));   // mode=near|exact

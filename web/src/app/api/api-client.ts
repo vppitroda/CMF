@@ -393,6 +393,83 @@ export class SearchClient implements ISearchClient {
     }
 }
 
+export interface ITextSearchClient {
+    search(q: string | undefined, category: string | null | undefined, limit: number | undefined, includeOld: boolean | undefined): Observable<TextSearchResponse>;
+}
+
+@Injectable()
+export class TextSearchClient implements ITextSearchClient {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ?? "http://localhost:5013";
+    }
+
+    search(q: string | undefined, category: string | null | undefined, limit: number | undefined, includeOld: boolean | undefined): Observable<TextSearchResponse> {
+        let url_ = this.baseUrl + "/api/text-search?";
+        if (q === null)
+            throw new globalThis.Error("The parameter 'q' cannot be null.");
+        else if (q !== undefined)
+            url_ += "q=" + encodeURIComponent("" + q) + "&";
+        if (category !== undefined && category !== null)
+            url_ += "category=" + encodeURIComponent("" + category) + "&";
+        if (limit === null)
+            throw new globalThis.Error("The parameter 'limit' cannot be null.");
+        else if (limit !== undefined)
+            url_ += "limit=" + encodeURIComponent("" + limit) + "&";
+        if (includeOld === null)
+            throw new globalThis.Error("The parameter 'includeOld' cannot be null.");
+        else if (includeOld !== undefined)
+            url_ += "includeOld=" + encodeURIComponent("" + includeOld) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processSearch(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processSearch(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<TextSearchResponse>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<TextSearchResponse>;
+        }));
+    }
+
+    protected processSearch(response: HttpResponseBase): Observable<TextSearchResponse> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver) as TextSearchResponse;
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+}
+
 export interface CategoryDto {
     key: string;
     label: string;
@@ -512,6 +589,39 @@ export interface SearchResultDto {
 export enum SearchMode {
     Near = "Near",
     Exact = "Exact",
+}
+
+export interface TextSearchResponse {
+    results: TextSearchResultDto[];
+}
+
+export interface TextSearchResultDto {
+    documentId: number;
+    fileName: string;
+    relPath: string;
+    category: string;
+    categoryLabel: string;
+    projectCode?: string | undefined;
+    revision?: string | undefined;
+    isLatest: boolean;
+    application?: string | undefined;
+    matchKind: MatchKind;
+    matchLabel: string;
+    matchedText: string;
+    score: number;
+    matchCount: number;
+    matchedKey?: string | undefined;
+    page?: number | undefined;
+    bbox?: number[] | undefined;
+    siblings: SiblingDto[];
+}
+
+export enum MatchKind {
+    PartNo = "PartNo",
+    BomLine = "BomLine",
+    Spec = "Spec",
+    Note = "Note",
+    FileName = "FileName",
 }
 
 export interface FileResponse {

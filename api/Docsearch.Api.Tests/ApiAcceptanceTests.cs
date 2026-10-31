@@ -133,6 +133,108 @@ public class ApiAcceptanceTests(WebApplicationFactory<Program> factory) : IClass
         Assert.Equal(10, doc.GetProperty("bomLines").GetArrayLength());
     }
 
+    // --- M7: fuzzy free-text search ---------------------------------------------------------------------
+
+    private async Task<List<JsonElement>> Text(string query) =>
+        (await GetJson($"/api/text-search?{query}")).GetProperty("results").EnumerateArray().ToList();
+
+    private static string Kind(JsonElement r) => r.GetProperty("matchKind").GetString()!;
+
+    [Fact]
+    public async Task M7_typod_query_finds_the_right_bom_rows()
+    {
+        var exact = await Text("q=pressure%20relief%20valve");
+        var typo = await Text("q=presure%20relef%20valve");
+        Assert.NotEmpty(typo);
+        Assert.All(typo.Take(5), r => Assert.Equal("BomLine", Kind(r)));
+        Assert.All(typo.Take(5), r => Assert.Contains("Pressure Relief Valve", r.GetProperty("matchedText").GetString()));
+        // the same documents come back as for the correctly spelled query
+        Assert.Equal(exact.Select(r => r.GetProperty("documentId").GetInt64()).Order(),
+                     typo.Select(r => r.GetProperty("documentId").GetInt64()).Order().Take(exact.Count));
+        Assert.True(typo[0].GetProperty("score").GetDouble() < exact[0].GetProperty("score").GetDouble());
+    }
+
+    [Fact]
+    public async Task M7_part_number_with_o_for_zero_still_finds_the_part()
+    {
+        var r = await Text("q=TPN0O041");                       // letter O typed for the digit 0
+        Assert.Equal("PartNo", Kind(r[0]));
+        Assert.Equal("TPN00041", r[0].GetProperty("matchedText").GetString());
+        Assert.Equal(1.0, r[0].GetProperty("score").GetDouble());
+        Assert.Contains("PP60056", r[0].GetProperty("fileName").GetString());
+        // near-miss part numbers (different parts) rank strictly below
+        Assert.All(r.Skip(1).Where(x => x.GetProperty("matchedText").GetString() != "TPN00041"),
+                   x => Assert.True(x.GetProperty("score").GetDouble() < 1.0));
+    }
+
+    [Fact]
+    public async Task M7_cad_parts_are_found_by_file_name_exact_matches_first_then_near_misses()
+    {
+        var r = await Text("q=4we6&category=cad");
+        Assert.All(r, x => Assert.Equal("FileName", Kind(x)));
+        Assert.All(r, x => Assert.EndsWith(".SLDPRT", x.GetProperty("fileName").GetString()));
+        Assert.All(r, x => Assert.Equal("PP60058", x.GetProperty("projectCode").GetString()));
+        var exact = r.TakeWhile(x => x.GetProperty("score").GetDouble() == 1.0).Select(x => x.GetProperty("fileName").GetString()).Order();
+        Assert.Equal(new[] { "4WE6-D-ASM.SLDPRT", "4WE6-E-H-G-J.SLDPRT" }, exact);
+        // "4WE 10 D" is the same valve family at another size: a fair near-match, but it must rank below the exact parts
+        Assert.All(r.Skip(2), x => Assert.True(x.GetProperty("score").GetDouble() < 1.0));
+    }
+
+    [Fact]
+    public async Task M7_spec_value_typo_matches_the_canonical_value_and_points_at_the_cell()
+    {
+        var r = await Text("q=minerial%20iso%20vg%2068&category=hyd_circuit");
+        var top = r.First();
+        Assert.Equal("Spec", Kind(top));
+        Assert.Equal("working_fluid", top.GetProperty("matchedKey").GetString());
+        Assert.Equal(4, top.GetProperty("bbox").GetArrayLength());
+        Assert.Contains("VG68", top.GetProperty("matchedText").GetString());           // VG68 outranks VG46
+        Assert.Equal(1.0, top.GetProperty("score").GetDouble());
+    }
+
+    [Fact]
+    public async Task M7_notes_are_searchable_despite_a_typo()
+    {
+        var r = await Text("q=metal%20condiut&category=hyd_circuit");          // "metal conduit"
+        Assert.Equal(new[] { "01-HV11452-c", "01-HV11495-d", "01-PP02123-d" },
+                     r.Select(x => x.GetProperty("fileName").GetString()![..12]).Order());
+        Assert.All(r, x => Assert.Equal("Note", Kind(x)));
+        Assert.All(r, x => Assert.True(x.GetProperty("isLatest").GetBoolean()));
+    }
+
+    [Fact]
+    public async Task M7_old_revisions_only_on_request_and_never_the_copy()
+    {
+        // the SMPS note exists only on the rev-0 drawing of PP60056
+        Assert.Empty(await Text("q=smps&category=hyd_circuit"));
+        var all = await Text("q=smps&category=hyd_circuit&includeOld=true");
+        Assert.Single(all);
+        Assert.False(all[0].GetProperty("isLatest").GetBoolean());
+        Assert.Contains("PP60056-0", all[0].GetProperty("fileName").GetString());
+        var many = await Text("q=hyd.ckt&includeOld=true&limit=100");
+        Assert.DoesNotContain(many, x => x.GetProperty("fileName").GetString()!.Contains("Copy"));
+    }
+
+    [Fact]
+    public async Task M7_matched_bom_line_carries_its_page_and_bbox_and_a_match_count()
+    {
+        var r = await Text("q=hot%20oil%20shuttle&category=bom_system");
+        Assert.NotEmpty(r);
+        Assert.All(r, x => Assert.Equal("BomLine", Kind(x)));
+        Assert.All(r, x => Assert.Equal(4, x.GetProperty("bbox").GetArrayLength()));
+        Assert.All(r, x => Assert.True(x.GetProperty("matchCount").GetInt32() >= 1));
+    }
+
+    [Fact]
+    public async Task M7_too_short_a_query_is_a_readable_400() =>
+        Assert.Equal(HttpStatusCode.BadRequest, (await _http.GetAsync("/api/text-search?q=ab")).StatusCode);
+
+    [Fact]
+    public async Task M7_nonsense_returns_nothing_rather_than_junk()
+    {
+        Assert.Empty(await Text("q=zzqxjkw"));
+    }
+
     [Fact]
     public async Task AT5_include_old_shows_all_revisions_otherwise_only_latest()
     {

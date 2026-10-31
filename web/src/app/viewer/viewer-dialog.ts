@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, output, signal } from '@angular/core';
+import { Component, ElementRef, OnInit, inject, input, output, signal } from '@angular/core';
 import { NgxExtendedPdfViewerModule, PageRenderedEvent } from 'ngx-extended-pdf-viewer';
 
 import { BomLineDto, DocumentDetailDto, DocumentsClient, SpecDto } from '../api/api-client';
@@ -15,6 +15,10 @@ export interface ViewerTarget {
 
 type PageView = PageRenderedEvent['source'];
 
+function sameBox(a?: number[], b?: number[]): boolean {
+  return !!a && !!b && a.length === b.length && a.every((v, i) => Math.abs(v - b[i]) < 0.05);
+}
+
 @Component({
   selector: 'app-viewer-dialog',
   imports: [NgxExtendedPdfViewerModule],
@@ -23,6 +27,7 @@ type PageView = PageRenderedEvent['source'];
 })
 export class ViewerDialog implements OnInit {
   private readonly documents = inject(DocumentsClient);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
 
   readonly target = input.required<ViewerTarget>();
   readonly closed = output<void>();
@@ -61,7 +66,16 @@ export class ViewerDialog implements OnInit {
     this.zoom.set(bbox ? 100 : 'page-width');
     this.highlight.set(page && bbox ? { page, bbox, key } : null);
     this.documents.get(id).subscribe({
-      next: (d) => this.detail.set(d),
+      next: (d) => {
+        this.detail.set(d);
+        const h = this.highlight();                       // a BOM-line hit: flag its row in the parts list
+        const i = h && !h.key ? d.bomLines.findIndex((l) => l.page === h.page && sameBox(l.bbox, h.bbox)) : -1;
+        if (h && i >= 0) {
+          this.highlight.set({ ...h, key: `line:${i}` });
+          // the parts list can be 90+ rows: bring the matched row into view once it has rendered
+          setTimeout(() => this.host.nativeElement.querySelector('.bom tr.match')?.scrollIntoView({ block: 'nearest' }), 50);
+        }
+      },
       error: () => this.error.set('Could not load document details.'),
     });
   }

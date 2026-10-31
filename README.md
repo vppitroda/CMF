@@ -37,7 +37,11 @@ All commands are idempotent (a second run changes nothing). Tests: `pip install 
     cd ..; dotnet test Docsearch.sln   # unit tests + acceptance tests (need the DB ingested, see above)
 `DOCSEARCH_ROOT` / `DOCSEARCH_DB` are read from environment variables, falling back to `appsettings.json`.
 Endpoints: `GET /api/categories`, `/api/categories/{cat}/properties`, `/api/categories/{cat}/properties/{prop}/values?q=`,
-`/api/search?category=&property=&value=&mode=near|exact&limit=&includeOld=`, `/api/documents/{id}`, `/api/documents/{id}/file`.
+`/api/search?category=&property=&value=&mode=near|exact&limit=&includeOld=`, `/api/documents/{id}`, `/api/documents/{id}/file`,
+`/api/text-search?q=&category=&limit=&includeOld=` (fuzzy: part numbers with O/0 and I/1 folded, BOM descriptions, spec values,
+circuit notes, file names; typos tolerated; one result per document with the page/bbox of its best match).
+Text search scans the tables with trigram `word_similarity` (no index): fine for the POC's thousands of rows; add GIN trigram
+indexes on `lower(description)`, `lower(file_name)` and use the `<%` operator when the corpus grows.
 
 ## UI (M4)
     cd web
