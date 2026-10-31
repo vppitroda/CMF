@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 out/probe/
+out/extract/
 
 # .NET
 api/**/bin/

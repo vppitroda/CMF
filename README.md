@@ -21,6 +21,16 @@ Search hydraulics BOMs / drawings by category -> spec property -> value -> neare
     py -3.12 -m venv D:\CMF\Docsearch\.venv
     D:\CMF\Docsearch\.venv\Scripts\pip install -r requirements.txt
 
-## Run the circuit extractor
+## Ingest into Postgres (M2)
+    docker compose up -d
+    cd ingest
+    $env:DOCSEARCH_ROOT = "D:\CMF\sample"
+    ..\.venv\Scripts\python -m docsearch_ingest scan      # classify, hash, duplicates, revisions, CAD siblings
+    ..\.venv\Scripts\python -m docsearch_ingest extract   # run extractors -> out/extract/<sha256>.json (cache)
+    ..\.venv\Scripts\python -m docsearch_ingest load      # spec fields / numbers / ports / notes / properties
+    ..\.venv\Scripts\python -m docsearch_ingest report    # out/report.md
+All commands are idempotent (a second run changes nothing). Tests: `pip install -r requirements-dev.txt; cd ingest; python -m pytest`.
+
+## Run the circuit extractor (standalone)
     cd ingest
     python run_circuits.py <path-to-sample> ..\out
