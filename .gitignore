@@ -16,3 +16,4 @@ web/.angular/
 web/test-results/
 web/playwright-report/
 web/e2e-viewer.png
+out/*.log
