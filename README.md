@@ -31,6 +31,14 @@ Search hydraulics BOMs / drawings by category -> spec property -> value -> neare
     ..\.venv\Scripts\python -m docsearch_ingest report    # out/report.md
 All commands are idempotent (a second run changes nothing). Tests: `pip install -r requirements-dev.txt; cd ingest; python -m pytest`.
 
+## API (M3)
+    cd api\Docsearch.Api
+    dotnet run                      # http://localhost:5013 , Swagger UI at /swagger , OpenAPI at /swagger/v1/swagger.json
+    cd ..; dotnet test Docsearch.sln   # unit tests + acceptance tests (need the DB ingested, see above)
+`DOCSEARCH_ROOT` / `DOCSEARCH_DB` are read from environment variables, falling back to `appsettings.json`.
+Endpoints: `GET /api/categories`, `/api/categories/{cat}/properties`, `/api/categories/{cat}/properties/{prop}/values?q=`,
+`/api/search?category=&property=&value=&mode=near|exact&limit=&includeOld=`, `/api/documents/{id}`, `/api/documents/{id}/file`.
+
 ## Run the circuit extractor (standalone)
     cd ingest
     python run_circuits.py <path-to-sample> ..\out
