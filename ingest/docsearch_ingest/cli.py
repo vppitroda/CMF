@@ -17,13 +17,24 @@ from psycopg.types.json import Jsonb
 from . import aliases, db
 from .bom import extract_bom
 from .circuit import extract_circuit
+from .cylbook import extract_cylbook
+from .jb import extract_jb
+from .motor import extract_motor
 from .classify import classify, is_junk, resolve
 from .props import PROPERTIES
 
 BOM_CATEGORIES = ("bom_system", "bom_cylinder", "bom_spares", "bom_valve_stand")
-EXTRACTOR_VERSION = {"hyd_circuit": "circuit-1", **{c: "bom-2" for c in BOM_CATEGORIES}}   # bom-2: page-box fix
+EXTRACTOR_VERSION = {"hyd_circuit": "circuit-1", **{c: "bom-2" for c in BOM_CATEGORIES},   # bom-2: page-box fix
+                     "motor_datasheet": "motor-2", "jb_doc": "jb-1", "cylinder_ga_book": "cylbook-1"}
 # category -> f(pdf_path, category) -> result dict
-EXTRACTORS = {"hyd_circuit": lambda path, cat: extract_circuit(path), **{c: extract_bom for c in BOM_CATEGORIES}}
+EXTRACTORS = {"hyd_circuit": lambda path, cat: extract_circuit(path), **{c: extract_bom for c in BOM_CATEGORIES},
+              "motor_datasheet": extract_motor, "jb_doc": extract_jb, "cylinder_ga_book": extract_cylbook}
+
+# Categories that are deliberately not parsed in the POC: marked 'skipped' (never left 'pending') with the reason.
+GA_REASON = ("not parsed: GA drawings are link-only in the POC (1 of 12 has the spec block, 2 are scanned images "
+             "without text) - see docs/schema.md")
+NOT_PARSED = {"ga_drawing": GA_REASON}
+NOT_PARSED_DEFAULT = "not parsed in the POC (free-text indexing only, M7)"
 DEFAULT_OUT = Path(__file__).resolve().parents[2] / "out"
 DEFAULT_DSN = "postgresql://docsearch:docsearch@localhost:5432/docsearch"
 
@@ -120,7 +131,27 @@ def _name_mismatches(payload: dict, code: str | None, rev: str | None) -> list[s
     return out
 
 
+def _mark_skipped(conn) -> int:
+    """Duplicates and categories without an extractor are 'skipped' with a reason, so nothing is left 'pending'."""
+    n = 0
+    with conn.cursor() as cur:
+        cur.execute("UPDATE documents SET parse_status = 'skipped', parse_warnings = %s "
+                    "WHERE duplicate_of IS NOT NULL AND parse_status = 'pending'",
+                    (Jsonb(["duplicate of an identical file"]),))
+        n += cur.rowcount
+        cur.execute("SELECT DISTINCT category FROM documents WHERE parse_status = 'pending' AND category <> ALL(%s)",
+                    (list(EXTRACTORS),))
+        for (cat,) in cur.fetchall():
+            cur.execute("UPDATE documents SET parse_status = 'skipped', parse_warnings = %s "
+                        "WHERE category = %s AND parse_status = 'pending'",
+                        (Jsonb([NOT_PARSED.get(cat, NOT_PARSED_DEFAULT)]), cat))
+            n += cur.rowcount
+    conn.commit()
+    return n
+
+
 def cmd_extract(conn, root: Path, out: Path, category: str | None, force: bool) -> None:
+    skipped_now = _mark_skipped(conn)
     cats = [category] if category else list(EXTRACTORS)
     with conn.cursor() as cur:
         cur.execute("SELECT id, rel_path, sha256, category, extractor_version, project_code, revision FROM documents "
@@ -157,7 +188,7 @@ def cmd_extract(conn, root: Path, out: Path, category: str | None, force: bool) 
         conn.commit()
         done += 1
         print(f"  {status:7s} {rel}")
-    print(f"extract: {done} extracted, {skipped} up to date")
+    print(f"extract: {done} extracted, {skipped} up to date, {skipped_now} newly marked skipped")
 
 
 # --- load -----------------------------------------------------------------------------------------
@@ -182,7 +213,8 @@ def _insert_specs(cur, doc_id: int, specs: dict, default_page: int | None) -> No
             cur.execute("INSERT INTO spec_numbers (field_id, ord, num) VALUES (%s,%s,%s)", (field_id, i, n))
 
 
-def _load_bom(cur, doc_id: int, r: dict) -> None:
+def _load_sheet(cur, doc_id: int, r: dict) -> None:
+    """Specs plus optional parts-list lines (BOM rows, cylinder-book index rows)."""
     _insert_specs(cur, doc_id, r["specs"], r.get("page"))
     for ln in r["lines"]:
         cur.execute(
@@ -206,7 +238,8 @@ def _load_circuit(cur, doc_id: int, r: dict) -> None:
                     (doc_id, n.get("no"), n.get("text"), page))
 
 
-LOADERS = {"hyd_circuit": _load_circuit, **{c: _load_bom for c in BOM_CATEGORIES}}
+LOADERS = {"hyd_circuit": _load_circuit, **{c: _load_sheet for c in BOM_CATEGORIES},
+           "motor_datasheet": _load_sheet, "jb_doc": _load_sheet, "cylinder_ga_book": _load_sheet}
 
 
 def _sync_reused_on_links(conn) -> tuple[int, int]:
@@ -273,9 +306,11 @@ def cmd_report(conn, out: Path) -> None:
     with conn.cursor() as cur:
         cur.execute("SELECT category, count(*), count(*) FILTER (WHERE duplicate_of IS NOT NULL), "
                     "count(*) FILTER (WHERE parse_status='ok'), count(*) FILTER (WHERE parse_status='partial'), "
-                    "count(*) FILTER (WHERE parse_status='failed') FROM documents GROUP BY category ORDER BY category")
-        lines += ["## Documents per category", "", "| category | files | duplicates | ok | partial | failed |",
-                  "|---|---|---|---|---|---|"]
+                    "count(*) FILTER (WHERE parse_status='failed'), count(*) FILTER (WHERE parse_status='skipped'), "
+                    "count(*) FILTER (WHERE parse_status='pending') FROM documents GROUP BY category ORDER BY category")
+        lines += ["## Documents per category", "",
+                  "| category | files | duplicates | ok | partial | failed | skipped (not parsed) | pending |",
+                  "|---|---|---|---|---|---|---|---|"]
         lines += [f"| {' | '.join(map(str, r))} |" for r in cur.fetchall()]
         for cat, props in PROPERTIES.items():
             cur.execute("SELECT count(*) FROM documents WHERE category=%s AND duplicate_of IS NULL", (cat,))

@@ -442,7 +442,7 @@ xUnit for API endpoints, one Playwright smoke test for the four-step flow.
 | M3 ✅ | .NET API: categories / properties / values / search / document / file | AT-1, AT-5, AT-6 via curl/Swagger |
 | M4 ✅ | Angular four-step UI + results + PDF viewer with highlight | AT-1, AT-4 in the browser |
 | M5 ✅ | `bom.py`: cylinder title specs, `reused_on`, BOM rows (all `bom_*`) | AT-2, AT-3 |
-| M6 | motor datasheet, JB cover, cylinder GA book, GA drawing investigation | properties appear in the UI |
+| M6 ✅ | motor datasheet, JB cover, cylinder GA book, GA drawing investigation | properties appear in the UI |
 | M7 | canonicalisation polish, fuzzy text search endpoint + UI box | typo'd query finds the right doc |
 | M8 | golden set + accuracy report, README for the demo | accuracy numbers in `out/report.md` |
 
@@ -462,6 +462,6 @@ Do M2→M4 first: a thin end-to-end vertical slice on circuits is the demo. Then
 1. Which Postgres major version will the Azure target use? (Compose uses `postgres:latest`; PG18+ images want the data volume at `/var/lib/postgresql`.)
 2. Is the sample representative of the full file set (other customers / vendors / templates)? Add a `report` check that flags layouts that do not match.
 3. Which categories matter most to the engineers? Assumed: circuits, cylinders, system BOMs.
-4. GA drawing spec block: where is it, and is it worth parsing?
+4. GA drawing spec block: where is it, and is it worth parsing? **Answered in M6: no - 1 of 12 carries the full block, 2 are scanned images; link-only (see docs/schema.md).**
 5. Normalising the port table across the ELECON and SMS templates for filtering.
 6. Later: stacked filters (several properties AND-ed), pgvector for semantic search, Qwen3-VL fallback for unparseable spec boxes, Windows/AD auth, Azure deployment.

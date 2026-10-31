@@ -63,6 +63,27 @@ connection = SAE/G thread; SMS: size = thread/flange, connection = flange type, 
   ports matched.
 - NOT yet done: a hand-verified ground-truth set (~20 drawings) for an objective accuracy number.
 
+## Other categories (M5/M6) - deliberately coarse for the POC
+| Category | Properties (filters) | Source |
+|---|---|---|
+| bom_cylinder | bore_mm, rod_mm, stroke_mm, application, options, make, reused_on | title block of the BOM; rows in `bom_lines` |
+| bom_system | reservoir_litres | "Oil Reservoir : 2000 Ltrs" row |
+| bom_spares | reused_on ("for systems") | title block `(PP60050 / 51 / 52)` |
+| motor_datasheet | rated_output_kw, rated_speed_rpm, poles, frame, voltage_v, efficiency_class, protection_ip | label/value grid, page 1 |
+| jb_doc | enclosure_size (W,H,D), supply_voltage, control_voltage | cover page; cylinder JBs have no enclosure |
+| cylinder_ga_book | bore_mm (all bores in the book), projects | index page; each index row is a parts-list line |
+
+Not filterable (no properties): ga_drawing, crs, cad, elec_load_list, io_list, operation_writeup, bom_valve_stand.
+Those are `skipped` (never left `pending`) and wait for the M7 free-text search.
+
+## GA drawings - investigation result (open question 4)
+Of 12 GA PDFs: 2 are scanned images with no text layer (HAS90543, HAS90544); the 6 ELECON assembly GAs and HV11453/11455/11495
+carry only a part list / weights; HV11452-b has a partial spec table with non-standard labels ("Working presure", no Design
+pressure); only PP02123-b has the full block (design pressure, fluid, materials, user terminations, notes) and it has no
+"Project Name" anchor. Supporting that would mean a second anchor and zone for one document, and the values duplicate the
+circuit drawing of the same project. **Decision: GA drawings are link-only in the POC.** If needed later, reuse `circuit.py`
+with a relaxed zone (it now stops at the bottom 40 % of the page) and an anchor on "Design Pressure".
+
 ## Known gaps / next
 - title block (drawing no., description, format) - filename already gives project/type/rev.
 - value canonicalisation for the filter list (e.g. "Minerial ISO VG68" typo vs "Mineral ISO VG46").

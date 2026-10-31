@@ -96,3 +96,34 @@ test('cylinder BOM: bore 80 -> the 80x56 cylinders with reused_on; BOM row highl
   await expect.poll(() => textUnderHighlight(page)).toContain('2103-01-18.00');    // on that row in the PDF
   if (process.env['SHOT_BOM']) await page.screenshot({ path: process.env['SHOT_BOM'] });
 });
+
+// M6: motor datasheet and JB cover (coarse filters), highlight on the right words.
+test('motor datasheet and JB cover: nearest value, highlight on the printed cell', async ({ page }) => {
+  await page.goto('/');
+
+  await page.locator('#cat').selectOption('motor_datasheet');
+  await page.locator('#prop').selectOption({ label: 'Rated output (kW)' });
+  await expect(page.getByRole('button', { name: /^110 kW/ })).toContainText('· 2');
+  await page.locator('#val').fill('100');
+  await page.getByRole('button', { name: 'Go', exact: true }).click();
+  const rows = page.locator('.row-result');
+  await expect(rows.first()).toContainText('110 kW');
+  await expect(rows.first()).toContainText('Δ 10');
+  await rows.first().locator('.name').click();
+  const dialog = page.locator('app-viewer-dialog');
+  await expect(dialog.locator('.ds-highlight')).toBeInViewport({ ratio: 0.9, timeout: 60_000 });
+  await expect.poll(() => textUnderHighlight(page)).toContain('Rated Output');
+  await expect.poll(() => textUnderHighlight(page)).toContain('110');
+  await dialog.getByRole('button', { name: 'Close' }).click();
+
+  await page.locator('#cat').selectOption('jb_doc');
+  await page.locator('#prop').selectOption({ label: 'Enclosure W x H x D (mm)' });
+  await page.locator('#val').fill('350');
+  await page.getByRole('button', { name: 'Go', exact: true }).click();
+  await expect(rows.first()).toContainText('(D)');
+  await expect(rows.first()).toContainText('Δ 0');
+  await rows.first().locator('.name').click();
+  await expect(dialog.locator('.ds-highlight')).toBeInViewport({ ratio: 0.9, timeout: 60_000 });
+  await expect.poll(() => textUnderHighlight(page)).toContain('Enclosures');
+  if (process.env['SHOT_JB']) await page.screenshot({ path: process.env['SHOT_JB'] });
+});

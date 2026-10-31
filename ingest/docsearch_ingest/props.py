@@ -40,4 +40,23 @@ PROPERTIES: dict[str, list[tuple[str, str, str]]] = {
     ],
     "bom_system": [("reservoir_litres", "Oil reservoir (litres)", "number")],
     "bom_spares": [("reused_on", "For systems", "text")],
+    # POC: only what an engineer filters on, not every field on the sheet
+    "motor_datasheet": [
+        ("rated_output_kw", "Rated output (kW)", "number"),
+        ("rated_speed_rpm", "Rated speed (rpm)", "number"),
+        ("poles", "Poles", "number"),
+        ("frame", "Frame", "text"),
+        ("voltage_v", "Voltage (V)", "number"),
+        ("efficiency_class", "Efficiency class", "text"),
+        ("protection_ip", "Protection (IP)", "text"),
+    ],
+    "jb_doc": [
+        ("enclosure_size", "Enclosure W x H x D (mm)", "number"),
+        ("supply_voltage", "Supply voltage (V)", "number"),
+        ("control_voltage", "Control voltage (V)", "number"),
+    ],
+    "cylinder_ga_book": [
+        ("bore_mm", "Cylinder bores in the book (mm)", "number"),
+        ("projects", "Projects covered", "text"),
+    ],
 }

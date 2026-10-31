@@ -89,6 +89,50 @@ public class ApiAcceptanceTests(WebApplicationFactory<Program> factory) : IClass
         Assert.Equal(4, lines[0].GetProperty("bbox").GetArrayLength());
     }
 
+    // --- M6: coarse properties for motor datasheets, JB covers and cylinder GA books ----------------------
+
+    [Fact]
+    public async Task M6_categories_are_listed_with_hydraulic_circuit_first_and_ga_drawings_not_filterable()
+    {
+        var keys = (await GetJson("/api/categories")).EnumerateArray().Select(c => c.GetProperty("key").GetString()).ToList();
+        Assert.Equal("hyd_circuit", keys[0]);
+        Assert.Contains("motor_datasheet", keys);
+        Assert.Contains("jb_doc", keys);
+        Assert.Contains("cylinder_ga_book", keys);
+        Assert.DoesNotContain("ga_drawing", keys);        // link-only in the POC: no properties
+        Assert.DoesNotContain("crs", keys);
+    }
+
+    [Fact]
+    public async Task M6_motor_power_near_100_kw_returns_the_110_kw_motors_latest_revision_only()
+    {
+        var props = await GetJson("/api/categories/motor_datasheet/properties");
+        Assert.Equal(7, props.GetArrayLength());
+        var r = await Results("category=motor_datasheet&property=rated_output_kw&value=100");
+        Assert.Equal("110 kW", r[0].GetProperty("matchedValue").GetString());
+        Assert.Equal(10m, r[0].GetProperty("delta").GetDecimal());
+        Assert.All(r, x => Assert.True(x.GetProperty("isLatest").GetBoolean()));
+        Assert.Equal(5, r.Count);                          // 110 (PP60056), 18.5 (PP60056), 110 (PP60057), 11 + 160 (PP60058): one per family
+    }
+
+    [Fact]
+    public async Task M6_jb_enclosure_depth_350_matches_only_the_latest_revisions_that_have_it()
+    {
+        var r = await Results("category=jb_doc&property=enclosure_size&value=350");
+        Assert.NotEmpty(r);
+        Assert.All(r, x => Assert.Equal(0m, x.GetProperty("delta").GetDecimal()));
+        Assert.All(r, x => Assert.Equal("b", x.GetProperty("revision").GetString()));
+    }
+
+    [Fact]
+    public async Task M6_cylinder_book_bore_80_returns_the_latest_books_and_exposes_the_index_rows()
+    {
+        var r = await Results("category=cylinder_ga_book&property=bore_mm&value=80");
+        Assert.Equal(2, r.Count);
+        var doc = await GetJson($"/api/documents/{r[0].GetProperty("documentId").GetInt64()}");
+        Assert.Equal(10, doc.GetProperty("bomLines").GetArrayLength());
+    }
+
     [Fact]
     public async Task AT5_include_old_shows_all_revisions_otherwise_only_latest()
     {
